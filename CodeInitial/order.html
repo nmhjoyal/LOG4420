@@ -19,7 +19,24 @@
   </header>
 
   <main>
+    <h1>Commande</h1>
+    <form>
+      <fieldset>
+        <legend>Contact</legend>
+        <label for="firstname">Prénom</label> <input id="firstname" required autofocus>
+        <label for="lastname">Nom</label> <input id="lastname" required>
+        <label for="email">Adresse courriel</label> <input id="email" type="email" required>
+        <label for="phone">Numéro de téléphone</label> <input id="phone" type="tel" required>
 
+      </fieldset>
+
+      <fieldset>
+        <legend>Paiement</legend>
+        <label for="creditcard">Numéro de carte de crédit</label> <input id="creditcard" type="number" required>
+        <label for="creditcardexpiry">Date d'expiration de la carte</label> <input id="creditcardexpiry" type="date" required>
+      </fieldset>
+      <a href="confirmation.html"><input type="submit" value="Payer"></a>
+    </form>
   </main>
 
   <footer>
