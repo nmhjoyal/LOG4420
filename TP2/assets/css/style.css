@@ -70,3 +70,7 @@ main {
   right: 15px;
   top: 17px;
 }
+
+body {
+  margin: 0px;
+}
