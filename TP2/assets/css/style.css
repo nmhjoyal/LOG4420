@@ -73,4 +73,19 @@ main {
 
 body {
   margin: 0px;
+  display: flex;
+  flex-direction: column;
+}
+
+html, body {
+  height: 100%;
+}
+
+.main-footer {
+  height: 70px;
+  background-color: #eeeeee;
+  border-top: 1px solid #cccccc;
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
 }
