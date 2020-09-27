@@ -50,7 +50,7 @@ nav ul li a.active {
 
 main {
   max-width: 1200px;
-  margin: auto;
+  margin: 20px 20px auto 20px;
 }
 
 .fa-shopping-cart {
@@ -88,4 +88,27 @@ html, body {
   display: flex;
   flex-shrink: 0;
   justify-content: center;
+}
+
+#home-img {
+  height: 400px;
+  margin-top: -85px;
+  float: right;
+}
+
+.btn {
+  grid-column: 1;
+  grid-row: 3;
+  width: max-content;
+  background-color: #14597f;
+  border: 1px solid #0b2d3d;
+  border-radius: 4px;
+  text-decoration: none;
+  color: white;
+  padding: 8px;
+}
+
+.btn:hover {
+  background-color: #1fb5e9;
+  transition: ease-out 0.2s;
 }
