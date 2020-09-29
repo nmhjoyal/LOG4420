@@ -207,11 +207,11 @@ body {
   transition: ease-out 0.2s;
 }
 
-#products-list img {
+main img {
   max-width: 100%;
 }
 
-.products-section h1 {
+h1 {
   font-size: 40px;
   margin-bottom: 30px;
 }
@@ -220,6 +220,28 @@ body {
   text-align: right;
 }
 
-.main {
-  margin-left: 160px;
+.product-grid {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.product-grid hr {
+  border-top: 1px dashed grey;
+}
+
+.form-control {
+  border: 1px solid  #999999;
+  border-radius: 4px;
+  width: 40px;
+  height: 30px;
+  padding: 5px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+   opacity: 1;
+}
+
+input:focus, input:active {
+  outline:none;
 }
