@@ -273,3 +273,73 @@ input:focus, input:active {
   text-align: center;
   display: block;
 }
+
+/* shopping-cart */
+.cart-content button {
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  border-style: none;
+  background-color: #dddddd;
+  padding: 1px 2px 0px 0px;
+}
+
+.cart-content button i {
+  width: 10px;
+  height: 10px;
+}
+
+.cart-content button:hover {
+  background-color: #bbbbbb;
+}
+
+.cart-table {
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-header {
+  display: grid;
+  grid-template-columns: 30px 24.375% 24.375% 24.375% 24.375%;
+  border-bottom: 1px solid black;
+  margin: 8px 8px 0px;
+}
+
+.cart-header th {
+  text-align: justify;
+}
+
+.price-col {
+  text-align: end;
+}
+
+#price-col-header {
+  text-align: end;
+}
+
+.cart-row {
+  display: grid;
+  grid-template-columns: 30px 24.375% 24.375% 24.375% 24.375%;
+  margin: 8px;
+}
+
+.quatity-select button {
+  margin: 0px 8px;
+}
+
+#total {
+  border-top: 1px solid black;
+  text-align: end;
+  padding-top: 16px;
+  margin-top: 0px;
+}
+
+.order-options {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.order-btn {
+  font: 400 13.3333px Arial;
+}
