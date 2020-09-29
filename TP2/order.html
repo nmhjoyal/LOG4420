@@ -33,29 +33,29 @@
     <article>
       <h1>Commande</h1>
       <form id="order-form" action="./confirmation.html" method="post">
-        <section>
-          <h2>Contact</h2>
-          <label for="first-name">Prénom</label>
-          <input id="first-name" name="first-name" type="text" placeholder="Prénom" required>
+        <section class="order-contact-grid">
+          <h2 class="order-grid-col1 order-grid-row1">Contact</h2>
+          <label class="order-grid-col1 order-grid-row2" for="first-name">Prénom</label>
+          <input class="form-control order-grid-col1 order-grid-row3" id="first-name" name="first-name" type="text" placeholder="Prénom" required>
 
-          <label for="last-name">Nom</label>
-          <input id="last-name" name="last-name" type="text" placeholder="Nom" required>
+          <label class="order-grid-col2 order-grid-row2" for="last-name">Nom</label>
+          <input class="form-control order-grid-col2 order-grid-row3" id="last-name" name="last-name" type="text" placeholder="Nom" required>
 
-          <label for="email">Adresse courriel</label>
-          <input id="email" name="email" type="email" placeholder="Adresse courriel" required>
+          <label class="order-grid-col1 order-grid-row4" for="email">Adresse courriel</label>
+          <input class="form-control order-grid-col1 order-grid-row5" id="email" name="email" type="email" placeholder="Adresse courriel" required>
 
-          <label for="phone">Téléphone</label>
-          <input id="phone" name="phone" type="tel" placeholder="###-###-####" required>
+          <label class="order-grid-col2 order-grid-row4" for="phone">Téléphone</label>
+          <input class="form-control order-grid-col2 order-grid-row5" id="phone" name="phone" type="tel" placeholder="###-###-####" required>
         </section>
-        <section>
-          <h2>Paiement</h2>
-          <label for="credit-card">Numéro de carte de crédit</label>
-          <input id="credit-card" name="credit-card" type="text" placeholder="•••• •••• •••• ••••" required>
+        <section class="order-contact-grid">
+          <h2 class="order-grid-col1 order-grid-row1">Paiement</h2>
+          <label class="order-grid-col1 order-grid-row2" for="credit-card">Numéro de carte de crédit</label>
+          <input class="form-control order-grid-col1 order-grid-row3" id="credit-card" name="credit-card" type="text" placeholder="•••• •••• •••• ••••" required>
 
-          <label for="credit-card-expiry">Expiration (mm/aa)</label>
-          <input id="credit-card-expiry" name="credit-card-expiry" type="text" placeholder="mm/aa" required>
+          <label class="order-grid-col2 order-grid-row2" for="credit-card-expiry">Expiration (mm/aa)</label>
+          <input class="form-control order-grid-col2 order-grid-row3" id="credit-card-expiry" name="credit-card-expiry" type="text" placeholder="mm/aa" required>
         </section>
-        <button type="submit">Payer</button>
+        <button class="pay-btn btn" type="submit">Payer</button>
       </form>
     </article>
   </main>
