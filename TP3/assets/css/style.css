@@ -175,7 +175,6 @@ header .logo img {
   height: 100%;
 }
 header nav {
-  display: inline-block;
   float: right;
 }
 header nav > ul {
@@ -370,4 +369,10 @@ footer {
   text-align: center;
   background-color: #eee;
   border-top: 1px solid #ccc;
+}
+#dialog {
+  float: inline-end;
+  color: white;
+  background-color: black;
+  border-radius: 5px;
 }
