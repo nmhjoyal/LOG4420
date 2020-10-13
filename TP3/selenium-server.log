@@ -1,0 +1,915 @@
+12:41:21.218 INFO - Selenium build info: version: '3.4.0', revision: 'unknown'
+12:41:21.219 INFO - Launching a standalone Selenium Server
+2020-10-13 12:41:21.251:INFO::main: Logging initialized @233ms to org.seleniumhq.jetty9.util.log.StdErrLog
+12:41:21.296 INFO - Driver class not found: com.opera.core.systems.OperaDriver
+12:41:21.296 INFO - Driver provider com.opera.core.systems.OperaDriver registration is skipped:
+Unable to create new instances on this machine.
+12:41:21.296 INFO - Driver class not found: com.opera.core.systems.OperaDriver
+12:41:21.297 INFO - Driver provider com.opera.core.systems.OperaDriver is not registered
+12:41:21.297 INFO - Driver provider org.openqa.selenium.safari.SafariDriver registration is skipped:
+ registration capabilities Capabilities [{browserName=safari, version=, platform=MAC}] does not match the current platform WIN10
+2020-10-13 12:41:21.341:INFO:osjs.Server:main: jetty-9.4.3.v20170317
+2020-10-13 12:41:21.366:INFO:osjsh.ContextHandler:main: Started o.s.j.s.ServletContextHandler@67b467e9{/,null,AVAILABLE}
+2020-10-13 12:41:21.655:INFO:osjs.AbstractConnector:main: Started ServerConnector@351d0846{HTTP/1.1,[http/1.1]}{0.0.0.0:4444}
+2020-10-13 12:41:21.656:INFO:osjs.Server:main: Started @637ms
+12:41:21.656 INFO - Selenium Server is up and running
+12:41:22.040 INFO - SessionCleaner initialized with insideBrowserTimeout 0 and clientGoneTimeout 1800000 polling every 180000
+12:41:22.054 INFO - Executing: [new session: Capabilities [{acceptSslCerts=true, marionette=true, name=1 Products, browserName=chrome, javascriptEnabled=true, platform=ANY}]])
+12:41:22.064 INFO - Creating a new session for Capabilities [{acceptSslCerts=true, marionette=true, name=1 Products, browserName=chrome, javascriptEnabled=true, platform=ANY}]
+Starting ChromeDriver 85.0.4183.87 (cd6713ebf92fa1cacc0f1a598df280093af0c5d7-refs/branch-heads/4183@{#1689}) on port 24603
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+12:41:25.480 INFO - Detected dialect: W3C
+12:41:25.495 INFO - Done: [new session: Capabilities [{acceptSslCerts=true, marionette=true, name=1 Products, browserName=chrome, javascriptEnabled=true, platform=ANY}]]
+12:41:25.521 INFO - Executing: [get: http://localhost:8000/products.html])
+12:41:26.376 INFO - Done: [get: http://localhost:8000/products.html]
+12:41:26.394 INFO - Executing: [find elements: By.cssSelector: #products-list])
+12:41:26.427 INFO - Done: [find elements: By.cssSelector: #products-list]
+12:41:26.604 INFO - Executing: [find elements: By.cssSelector: #products-count])
+12:41:26.620 INFO - Done: [find elements: By.cssSelector: #products-count]
+12:41:26.627 INFO - Executing: [get text: 1 [[ChromeDriver: chrome on ANY (83007c3f3d72c40046bdabf957300e48)] -> css selector: #products-count]])
+12:41:26.648 INFO - Done: [get text: 1 [[ChromeDriver: chrome on ANY (83007c3f3d72c40046bdabf957300e48)] -> css selector: #products-count]]
+12:41:26.655 INFO - Executing: [find elements: By.cssSelector: #products-list > *])
+12:41:26.675 INFO - Done: [find elements: By.cssSelector: #products-list > *]
+12:41:26.680 INFO - Executing: [is displayed: 2 [[ChromeDriver: chrome on ANY (83007c3f3d72c40046bdabf957300e48)] -> css selector: #products-list > *]])
+12:41:26.715 INFO - Done: [is displayed: 2 [[ChromeDriver: chrome on ANY (83007c3f3d72c40046bdabf957300e48)] -> css selector: #products-list > *]]
+12:41:26.719 INFO - Executing: [get text: 2 [[ChromeDriver: chrome on ANY (83007c3f3d72c40046bdabf957300e48)] -> css selector: #products-list > *]])
+12:41:26.738 INFO - Done: [get text: 2 [[ChromeDriver: chrome on ANY (83007c3f3d72c40046bdabf957300e48)] -> css selector: #products-list > *]]
+12:41:26.773 INFO - Executing: [find elements: By.cssSelector: #product-categories])
+12:41:26.791 INFO - Done: [find elements: By.cssSelector: #product-categories]
+12:41:26.797 INFO - Executing: [find elements: By.cssSelector: #product-categories > button])
+12:41:26.814 INFO - Done: [find elements: By.cssSelector: #product-categories > button]
+12:41:26.824 INFO - Executing: [get text: 16 [[ChromeDriver: chrome on ANY (83007c3f3d72c40046bdabf957300e48)] -> css selector: #product-categories > button]])
+12:41:26.843 INFO - Done: [get text: 16 [[ChromeDriver: chrome on ANY (83007c3f3d72c40046bdabf957300e48)] -> css selector: #product-categories > button]]
+12:41:26.848 INFO - Executing: [click: 16 [[ChromeDriver: chrome on ANY (83007c3f3d72c40046bdabf957300e48)] -> css selector: #product-categories > button]])
+12:41:26.891 INFO - Done: [click: 16 [[ChromeDriver: chrome on ANY (83007c3f3d72c40046bdabf957300e48)] -> css selector: #product-categories > button]]
+12:41:27.055 INFO - Executing: [get value of css property: 16 [[ChromeDriver: chrome on ANY (83007c3f3d72c40046bdabf957300e48)] -> css selector: #product-categories > button], selected])
+12:41:27.070 INFO - Done: [get value of css property: 16 [[ChromeDriver: chrome on ANY (83007c3f3d72c40046bdabf957300e48)] -> css selector: #product-categories > button], selected]
+12:41:27.076 INFO - Executing: [find elements: By.cssSelector: #product-categories > button:not(.selected)])
+12:41:27.095 INFO - Done: [find elements: By.cssSelector: #product-categories > button:not(.selected)]
+12:41:27.105 INFO - Executing: [find elements: By.cssSelector: #products-count])
+12:41:27.117 INFO - Done: [find elements: By.cssSelector: #products-count]
+12:41:27.123 INFO - Executing: [get text: 1 [[ChromeDriver: chrome on ANY (83007c3f3d72c40046bdabf957300e48)] -> css selector: #products-count]])
+12:41:27.136 INFO - Done: [get text: 1 [[ChromeDriver: chrome on ANY (83007c3f3d72c40046bdabf957300e48)] -> css selector: #products-count]]
+12:41:27.141 INFO - Executing: [find elements: By.cssSelector: #products-list > *])
+12:41:27.153 INFO - Done: [find elements: By.cssSelector: #products-list > *]
+12:41:27.157 INFO - Executing: [is displayed: 21 [[ChromeDriver: chrome on ANY (83007c3f3d72c40046bdabf957300e48)] -> css selector: #products-list > *]])
+12:41:27.184 INFO - Done: [is displayed: 21 [[ChromeDriver: chrome on ANY (83007c3f3d72c40046bdabf957300e48)] -> css selector: #products-list > *]]
+12:41:27.187 INFO - Executing: [get text: 21 [[ChromeDriver: chrome on ANY (83007c3f3d72c40046bdabf957300e48)] -> css selector: #products-list > *]])
+12:41:27.204 INFO - Done: [get text: 21 [[ChromeDriver: chrome on ANY (83007c3f3d72c40046bdabf957300e48)] -> css selector: #products-list > *]]
+12:41:27.227 INFO - Executing: [find elements: By.cssSelector: #product-criteria])
+12:41:27.246 INFO - Done: [find elements: By.cssSelector: #product-criteria]
+12:41:27.257 INFO - Executing: [find elements: By.cssSelector: #product-criteria > button])
+12:41:27.277 INFO - Done: [find elements: By.cssSelector: #product-criteria > button]
+12:41:27.283 INFO - Executing: [get text: 25 [[ChromeDriver: chrome on ANY (83007c3f3d72c40046bdabf957300e48)] -> css selector: #product-criteria > button]])
+12:41:27.300 INFO - Done: [get text: 25 [[ChromeDriver: chrome on ANY (83007c3f3d72c40046bdabf957300e48)] -> css selector: #product-criteria > button]]
+12:41:27.308 INFO - Executing: [click: 25 [[ChromeDriver: chrome on ANY (83007c3f3d72c40046bdabf957300e48)] -> css selector: #product-criteria > button]])
+12:41:27.344 INFO - Done: [click: 25 [[ChromeDriver: chrome on ANY (83007c3f3d72c40046bdabf957300e48)] -> css selector: #product-criteria > button]]
+12:41:27.504 INFO - Executing: [get value of css property: 25 [[ChromeDriver: chrome on ANY (83007c3f3d72c40046bdabf957300e48)] -> css selector: #product-criteria > button], selected])
+12:41:27.516 INFO - Done: [get value of css property: 25 [[ChromeDriver: chrome on ANY (83007c3f3d72c40046bdabf957300e48)] -> css selector: #product-criteria > button], selected]
+12:41:27.521 INFO - Executing: [find elements: By.cssSelector: #product-criteria > button:not(.selected)])
+12:41:27.538 INFO - Done: [find elements: By.cssSelector: #product-criteria > button:not(.selected)]
+12:41:27.548 INFO - Executing: [find elements: By.cssSelector: #products-count])
+12:41:27.559 INFO - Done: [find elements: By.cssSelector: #products-count]
+12:41:27.563 INFO - Executing: [get text: 1 [[ChromeDriver: chrome on ANY (83007c3f3d72c40046bdabf957300e48)] -> css selector: #products-count]])
+12:41:27.576 INFO - Done: [get text: 1 [[ChromeDriver: chrome on ANY (83007c3f3d72c40046bdabf957300e48)] -> css selector: #products-count]]
+12:41:28.083 INFO - Executing: [find elements: By.cssSelector: #products-count])
+12:41:28.093 INFO - Done: [find elements: By.cssSelector: #products-count]
+12:41:28.096 INFO - Executing: [get text: 1 [[ChromeDriver: chrome on ANY (83007c3f3d72c40046bdabf957300e48)] -> css selector: #products-count]])
+12:41:28.107 INFO - Done: [get text: 1 [[ChromeDriver: chrome on ANY (83007c3f3d72c40046bdabf957300e48)] -> css selector: #products-count]]
+12:41:28.613 INFO - Executing: [find elements: By.cssSelector: #products-count])
+12:41:28.626 INFO - Done: [find elements: By.cssSelector: #products-count]
+12:41:28.631 INFO - Executing: [get text: 1 [[ChromeDriver: chrome on ANY (83007c3f3d72c40046bdabf957300e48)] -> css selector: #products-count]])
+12:41:28.645 INFO - Done: [get text: 1 [[ChromeDriver: chrome on ANY (83007c3f3d72c40046bdabf957300e48)] -> css selector: #products-count]]
+12:41:29.158 INFO - Executing: [find elements: By.cssSelector: #products-count])
+12:41:29.189 INFO - Done: [find elements: By.cssSelector: #products-count]
+12:41:29.196 INFO - Executing: [get text: 1 [[ChromeDriver: chrome on ANY (83007c3f3d72c40046bdabf957300e48)] -> css selector: #products-count]])
+12:41:29.208 INFO - Done: [get text: 1 [[ChromeDriver: chrome on ANY (83007c3f3d72c40046bdabf957300e48)] -> css selector: #products-count]]
+12:41:29.715 INFO - Executing: [find elements: By.cssSelector: #products-count])
+12:41:29.728 INFO - Done: [find elements: By.cssSelector: #products-count]
+12:41:29.733 INFO - Executing: [get text: 1 [[ChromeDriver: chrome on ANY (83007c3f3d72c40046bdabf957300e48)] -> css selector: #products-count]])
+12:41:29.743 INFO - Done: [get text: 1 [[ChromeDriver: chrome on ANY (83007c3f3d72c40046bdabf957300e48)] -> css selector: #products-count]]
+12:41:29.802 INFO - Executing: [new session: Capabilities [{acceptSslCerts=true, marionette=true, name=2 Product, browserName=chrome, javascriptEnabled=true, platform=ANY}]])
+12:41:29.804 INFO - Creating a new session for Capabilities [{acceptSslCerts=true, marionette=true, name=2 Product, browserName=chrome, javascriptEnabled=true, platform=ANY}]
+Starting ChromeDriver 85.0.4183.87 (cd6713ebf92fa1cacc0f1a598df280093af0c5d7-refs/branch-heads/4183@{#1689}) on port 29990
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+12:41:32.898 INFO - Detected dialect: W3C
+12:41:32.900 INFO - Done: [new session: Capabilities [{acceptSslCerts=true, marionette=true, name=2 Product, browserName=chrome, javascriptEnabled=true, platform=ANY}]]
+12:41:32.918 INFO - Executing: [get: http://localhost:8000/product.html?id=2])
+12:41:33.875 INFO - Done: [get: http://localhost:8000/product.html?id=2]
+12:41:34.041 INFO - Executing: [find elements: By.cssSelector: #product-name])
+12:41:34.062 INFO - Done: [find elements: By.cssSelector: #product-name]
+12:41:34.067 INFO - Executing: [get text: 0 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: #product-name]])
+12:41:34.095 INFO - Done: [get text: 0 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: #product-name]]
+12:41:34.103 INFO - Executing: [find elements: By.cssSelector: #product-image])
+12:41:34.122 INFO - Done: [find elements: By.cssSelector: #product-image]
+12:41:34.127 INFO - Executing: [get element attribute: 1 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: #product-image], src])
+12:41:34.138 INFO - Done: [get element attribute: 1 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: #product-image], src]
+12:41:34.149 INFO - Executing: [find elements: By.cssSelector: #product-desc])
+12:41:34.163 INFO - Done: [find elements: By.cssSelector: #product-desc]
+12:41:34.167 INFO - Executing: [get text: 2 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: #product-desc]])
+12:41:34.184 INFO - Done: [get text: 2 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: #product-desc]]
+12:41:34.189 INFO - Executing: [find elements: By.cssSelector: #product-features > li])
+12:41:34.206 INFO - Done: [find elements: By.cssSelector: #product-features > li]
+12:41:34.213 INFO - Executing: [get text: 3 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: #product-features > li]])
+12:41:34.232 INFO - Done: [get text: 3 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: #product-features > li]]
+12:41:34.236 INFO - Executing: [get text: 4 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: #product-features > li]])
+12:41:34.253 INFO - Done: [get text: 4 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: #product-features > li]]
+12:41:34.258 INFO - Executing: [get text: 5 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: #product-features > li]])
+12:41:34.275 INFO - Done: [get text: 5 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: #product-features > li]]
+12:41:34.279 INFO - Executing: [get text: 6 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: #product-features > li]])
+12:41:34.298 INFO - Done: [get text: 6 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: #product-features > li]]
+12:41:34.302 INFO - Executing: [get text: 7 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: #product-features > li]])
+12:41:34.320 INFO - Done: [get text: 7 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: #product-features > li]]
+12:41:34.328 INFO - Executing: [find elements: By.cssSelector: #product-price])
+12:41:34.344 INFO - Done: [find elements: By.cssSelector: #product-price]
+12:41:34.349 INFO - Executing: [get text: 8 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: #product-price]])
+12:41:34.367 INFO - Done: [get text: 8 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: #product-price]]
+12:41:34.872 INFO - Executing: [find elements: By.cssSelector: #product-price])
+12:41:34.882 INFO - Done: [find elements: By.cssSelector: #product-price]
+12:41:34.885 INFO - Executing: [get text: 8 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: #product-price]])
+12:41:34.896 INFO - Done: [get text: 8 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: #product-price]]
+12:41:35.402 INFO - Executing: [find elements: By.cssSelector: #product-price])
+12:41:35.414 INFO - Done: [find elements: By.cssSelector: #product-price]
+12:41:35.418 INFO - Executing: [get text: 8 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: #product-price]])
+12:41:35.437 INFO - Done: [get text: 8 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: #product-price]]
+12:41:35.943 INFO - Executing: [find elements: By.cssSelector: #product-price])
+12:41:35.953 INFO - Done: [find elements: By.cssSelector: #product-price]
+12:41:35.956 INFO - Executing: [get text: 8 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: #product-price]])
+12:41:35.968 INFO - Done: [get text: 8 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: #product-price]]
+12:41:36.477 INFO - Executing: [find elements: By.cssSelector: #product-price])
+12:41:36.488 INFO - Done: [find elements: By.cssSelector: #product-price]
+12:41:36.493 INFO - Executing: [get text: 8 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: #product-price]])
+12:41:36.503 INFO - Done: [get text: 8 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: #product-price]]
+12:41:37.011 INFO - Executing: [find elements: By.cssSelector: #product-price])
+12:41:37.021 INFO - Done: [find elements: By.cssSelector: #product-price]
+12:41:37.025 INFO - Executing: [get text: 8 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: #product-price]])
+12:41:37.034 INFO - Done: [get text: 8 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: #product-price]]
+12:41:37.541 INFO - Executing: [find elements: By.cssSelector: #product-price])
+12:41:37.552 INFO - Done: [find elements: By.cssSelector: #product-price]
+12:41:37.555 INFO - Executing: [get text: 8 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: #product-price]])
+12:41:37.565 INFO - Done: [get text: 8 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: #product-price]]
+12:41:38.073 INFO - Executing: [find elements: By.cssSelector: #product-price])
+12:41:38.084 INFO - Done: [find elements: By.cssSelector: #product-price]
+12:41:38.087 INFO - Executing: [get text: 8 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: #product-price]])
+12:41:38.097 INFO - Done: [get text: 8 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: #product-price]]
+12:41:38.603 INFO - Executing: [find elements: By.cssSelector: #product-price])
+12:41:38.615 INFO - Done: [find elements: By.cssSelector: #product-price]
+12:41:38.618 INFO - Executing: [get text: 8 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: #product-price]])
+12:41:38.629 INFO - Done: [get text: 8 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: #product-price]]
+12:41:39.136 INFO - Executing: [find elements: By.cssSelector: #product-price])
+12:41:39.147 INFO - Done: [find elements: By.cssSelector: #product-price]
+12:41:39.151 INFO - Executing: [get text: 8 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: #product-price]])
+12:41:39.167 INFO - Done: [get text: 8 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: #product-price]]
+12:41:39.676 INFO - Executing: [find elements: By.cssSelector: #product-price])
+12:41:39.687 INFO - Done: [find elements: By.cssSelector: #product-price]
+12:41:39.693 INFO - Executing: [get text: 8 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: #product-price]])
+12:41:39.708 INFO - Done: [get text: 8 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: #product-price]]
+12:41:39.744 INFO - Executing: [get: http://localhost:8000/product.html?id=354])
+12:41:39.875 INFO - Done: [get: http://localhost:8000/product.html?id=354]
+12:41:40.035 INFO - Executing: [find elements: By.cssSelector: h1])
+12:41:40.049 INFO - Done: [find elements: By.cssSelector: h1]
+12:41:40.053 INFO - Executing: [get text: 9 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: h1]])
+12:41:40.068 INFO - Done: [get text: 9 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: h1]]
+12:41:40.076 INFO - Executing: [execute script: var passedArgs = Array.prototype.slice.call(arguments,0); return function() {
+                //this code is executed in the context of the browser. document is a valid global in the context of the browser.
+                // eslint-disable-next-line no-undef
+                return document.querySelector("h1").parentNode.children.length;
+            }.apply(window, passedArgs);, []])
+12:41:40.083 INFO - Done: [execute script: var passedArgs = Array.prototype.slice.call(arguments,0); return function() {
+                //this code is executed in the context of the browser. document is a valid global in the context of the browser.
+                // eslint-disable-next-line no-undef
+                return document.querySelector("h1").parentNode.children.length;
+            }.apply(window, passedArgs);, []]
+12:41:40.103 INFO - Executing: [get: http://localhost:8000/product.html?id=12])
+12:41:40.202 INFO - Done: [get: http://localhost:8000/product.html?id=12]
+12:41:40.372 INFO - Executing: [find elements: By.cssSelector: .shopping-cart > .count])
+12:41:40.390 INFO - Done: [find elements: By.cssSelector: .shopping-cart > .count]
+12:41:40.398 INFO - Executing: [is displayed: 10 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: .shopping-cart > .count]])
+12:41:40.428 INFO - Done: [is displayed: 10 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: .shopping-cart > .count]]
+12:41:40.443 INFO - Executing: [find elements: By.cssSelector: #dialog])
+12:41:40.460 INFO - Done: [find elements: By.cssSelector: #dialog]
+12:41:40.465 INFO - Executing: [is displayed: 11 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: #dialog]])
+12:41:40.483 INFO - Done: [is displayed: 11 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: #dialog]]
+12:41:40.509 INFO - Executing: [find elements: By.cssSelector: #add-to-cart-form])
+12:41:40.529 INFO - Done: [find elements: By.cssSelector: #add-to-cart-form]
+12:41:40.536 INFO - Executing: [find elements: By.cssSelector: #add-to-cart-form input])
+12:41:40.550 INFO - Done: [find elements: By.cssSelector: #add-to-cart-form input]
+12:41:40.554 INFO - Executing: [clear: 13 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: #add-to-cart-form input]])
+12:41:40.587 INFO - Done: [clear: 13 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: #add-to-cart-form input]]
+12:41:40.592 INFO - Executing: [find elements: By.cssSelector: #add-to-cart-form input])
+12:41:40.600 INFO - Done: [find elements: By.cssSelector: #add-to-cart-form input]
+12:41:40.603 INFO - Executing: [send keys: 13 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: #add-to-cart-form input], [3]])
+12:41:40.646 INFO - Done: [send keys: 13 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: #add-to-cart-form input], [3]]
+12:41:40.651 INFO - Executing: [find elements: By.cssSelector: #add-to-cart-form])
+12:41:40.665 INFO - Done: [find elements: By.cssSelector: #add-to-cart-form]
+12:41:40.671 INFO - Executing: [submit: 12 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: #add-to-cart-form]])
+12:41:40.684 INFO - Done: [submit: 12 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: #add-to-cart-form]]
+12:41:40.842 INFO - Executing: [find elements: By.cssSelector: .shopping-cart > .count])
+12:41:40.852 INFO - Done: [find elements: By.cssSelector: .shopping-cart > .count]
+12:41:40.855 INFO - Executing: [is displayed: 10 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: .shopping-cart > .count]])
+12:41:40.869 INFO - Done: [is displayed: 10 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: .shopping-cart > .count]]
+12:41:40.875 INFO - Executing: [find elements: By.cssSelector: .shopping-cart > .count])
+12:41:40.886 INFO - Done: [find elements: By.cssSelector: .shopping-cart > .count]
+12:41:40.888 INFO - Executing: [get text: 10 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: .shopping-cart > .count]])
+12:41:40.904 INFO - Done: [get text: 10 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: .shopping-cart > .count]]
+12:41:40.910 INFO - Executing: [find elements: By.cssSelector: #dialog])
+12:41:40.920 INFO - Done: [find elements: By.cssSelector: #dialog]
+12:41:40.923 INFO - Executing: [is displayed: 11 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: #dialog]])
+12:41:40.939 INFO - Done: [is displayed: 11 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: #dialog]]
+12:41:40.946 INFO - Executing: [find elements: By.cssSelector: #dialog])
+12:41:40.954 INFO - Done: [find elements: By.cssSelector: #dialog]
+12:41:40.958 INFO - Executing: [is displayed: 11 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: #dialog]])
+12:41:40.973 INFO - Done: [is displayed: 11 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: #dialog]]
+12:41:40.979 INFO - Executing: [find elements: By.cssSelector: #dialog])
+12:41:40.987 INFO - Done: [find elements: By.cssSelector: #dialog]
+12:41:40.991 INFO - Executing: [is displayed: 11 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: #dialog]])
+12:41:41.007 INFO - Done: [is displayed: 11 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: #dialog]]
+12:41:41.511 INFO - Executing: [is displayed: 11 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: #dialog]])
+12:41:41.528 INFO - Done: [is displayed: 11 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: #dialog]]
+12:41:42.033 INFO - Executing: [is displayed: 11 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: #dialog]])
+12:41:42.047 INFO - Done: [is displayed: 11 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: #dialog]]
+12:41:42.556 INFO - Executing: [is displayed: 11 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: #dialog]])
+12:41:42.577 INFO - Done: [is displayed: 11 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: #dialog]]
+12:41:43.085 INFO - Executing: [is displayed: 11 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: #dialog]])
+12:41:43.110 INFO - Done: [is displayed: 11 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: #dialog]]
+12:41:43.613 INFO - Executing: [is displayed: 11 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: #dialog]])
+12:41:43.628 INFO - Done: [is displayed: 11 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: #dialog]]
+12:41:44.136 INFO - Executing: [is displayed: 11 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: #dialog]])
+12:41:44.168 INFO - Done: [is displayed: 11 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: #dialog]]
+12:41:44.671 INFO - Executing: [is displayed: 11 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: #dialog]])
+12:41:44.685 INFO - Done: [is displayed: 11 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: #dialog]]
+12:41:45.195 INFO - Executing: [is displayed: 11 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: #dialog]])
+12:41:45.219 INFO - Done: [is displayed: 11 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: #dialog]]
+12:41:45.725 INFO - Executing: [is displayed: 11 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: #dialog]])
+12:41:45.739 INFO - Done: [is displayed: 11 [[ChromeDriver: chrome on ANY (7f807f2ecbf2cb58d9ac00710bc1f809)] -> css selector: #dialog]]
+12:41:45.814 INFO - Executing: [new session: Capabilities [{acceptSslCerts=true, marionette=true, name=3 Shopping Cart, browserName=chrome, javascriptEnabled=true, platform=ANY}]])
+12:41:45.816 INFO - Creating a new session for Capabilities [{acceptSslCerts=true, marionette=true, name=3 Shopping Cart, browserName=chrome, javascriptEnabled=true, platform=ANY}]
+Starting ChromeDriver 85.0.4183.87 (cd6713ebf92fa1cacc0f1a598df280093af0c5d7-refs/branch-heads/4183@{#1689}) on port 29848
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+12:41:48.931 INFO - Detected dialect: W3C
+12:41:48.935 INFO - Done: [new session: Capabilities [{acceptSslCerts=true, marionette=true, name=3 Shopping Cart, browserName=chrome, javascriptEnabled=true, platform=ANY}]]
+12:41:48.948 INFO - Executing: [get: http://localhost:8000/shopping-cart.html])
+12:41:49.839 INFO - Done: [get: http://localhost:8000/shopping-cart.html]
+12:41:49.998 INFO - Executing: [find elements: By.cssSelector: h1])
+12:41:50.012 INFO - Done: [find elements: By.cssSelector: h1]
+12:41:50.016 INFO - Executing: [get text: 0 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: h1]])
+12:41:50.030 INFO - Done: [get text: 0 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: h1]]
+12:41:50.036 INFO - Executing: [find elements: By.cssSelector: h1 + *])
+12:41:50.051 INFO - Done: [find elements: By.cssSelector: h1 + *]
+12:41:50.054 INFO - Executing: [get text: 1 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: h1 + *]])
+12:41:50.089 INFO - Done: [get text: 1 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: h1 + *]]
+12:41:50.596 INFO - Executing: [find elements: By.cssSelector: h1 + *])
+12:41:50.607 INFO - Done: [find elements: By.cssSelector: h1 + *]
+12:41:50.611 INFO - Executing: [get text: 1 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: h1 + *]])
+12:41:50.650 INFO - Done: [get text: 1 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: h1 + *]]
+12:41:51.158 INFO - Executing: [find elements: By.cssSelector: h1 + *])
+12:41:51.167 INFO - Done: [find elements: By.cssSelector: h1 + *]
+12:41:51.170 INFO - Executing: [get text: 1 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: h1 + *]])
+12:41:51.208 INFO - Done: [get text: 1 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: h1 + *]]
+12:41:51.717 INFO - Executing: [find elements: By.cssSelector: h1 + *])
+12:41:51.738 INFO - Done: [find elements: By.cssSelector: h1 + *]
+12:41:51.742 INFO - Executing: [get text: 1 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: h1 + *]])
+12:41:51.780 INFO - Done: [get text: 1 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: h1 + *]]
+12:41:52.292 INFO - Executing: [find elements: By.cssSelector: h1 + *])
+12:41:52.315 INFO - Done: [find elements: By.cssSelector: h1 + *]
+12:41:52.320 INFO - Executing: [get text: 1 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: h1 + *]])
+12:41:52.350 INFO - Done: [get text: 1 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: h1 + *]]
+12:41:52.862 INFO - Executing: [find elements: By.cssSelector: h1 + *])
+12:41:52.874 INFO - Done: [find elements: By.cssSelector: h1 + *]
+12:41:52.877 INFO - Executing: [get text: 1 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: h1 + *]])
+12:41:52.909 INFO - Done: [get text: 1 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: h1 + *]]
+12:41:53.419 INFO - Executing: [find elements: By.cssSelector: h1 + *])
+12:41:53.443 INFO - Done: [find elements: By.cssSelector: h1 + *]
+12:41:53.448 INFO - Executing: [get text: 1 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: h1 + *]])
+12:41:53.479 INFO - Done: [get text: 1 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: h1 + *]]
+12:41:53.985 INFO - Executing: [find elements: By.cssSelector: h1 + *])
+12:41:53.999 INFO - Done: [find elements: By.cssSelector: h1 + *]
+12:41:54.004 INFO - Executing: [get text: 1 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: h1 + *]])
+12:41:54.034 INFO - Done: [get text: 1 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: h1 + *]]
+12:41:54.542 INFO - Executing: [find elements: By.cssSelector: h1 + *])
+12:41:54.552 INFO - Done: [find elements: By.cssSelector: h1 + *]
+12:41:54.557 INFO - Executing: [get text: 1 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: h1 + *]])
+12:41:54.596 INFO - Done: [get text: 1 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: h1 + *]]
+12:41:55.102 INFO - Executing: [find elements: By.cssSelector: h1 + *])
+12:41:55.114 INFO - Done: [find elements: By.cssSelector: h1 + *]
+12:41:55.117 INFO - Executing: [get text: 1 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: h1 + *]])
+12:41:55.148 INFO - Done: [get text: 1 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: h1 + *]]
+12:41:55.173 INFO - Executing: [get: http://localhost:8000/product.html?id=2])
+12:41:55.296 INFO - Done: [get: http://localhost:8000/product.html?id=2]
+12:41:55.456 INFO - Executing: [find elements: By.cssSelector: #add-to-cart-form input])
+12:41:55.478 INFO - Done: [find elements: By.cssSelector: #add-to-cart-form input]
+12:41:55.482 INFO - Executing: [clear: 2 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: #add-to-cart-form input]])
+12:41:55.529 INFO - Done: [clear: 2 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: #add-to-cart-form input]]
+12:41:55.535 INFO - Executing: [find elements: By.cssSelector: #add-to-cart-form input])
+12:41:55.551 INFO - Done: [find elements: By.cssSelector: #add-to-cart-form input]
+12:41:55.557 INFO - Executing: [send keys: 2 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: #add-to-cart-form input], [4]])
+12:41:55.611 INFO - Done: [send keys: 2 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: #add-to-cart-form input], [4]]
+12:41:55.616 INFO - Executing: [find elements: By.cssSelector: #add-to-cart-form])
+12:41:55.631 INFO - Done: [find elements: By.cssSelector: #add-to-cart-form]
+12:41:55.634 INFO - Executing: [submit: 3 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: #add-to-cart-form]])
+12:41:55.647 INFO - Done: [submit: 3 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: #add-to-cart-form]]
+12:41:55.655 INFO - Executing: [get: http://localhost:8000/product.html?id=4])
+12:41:55.741 INFO - Done: [get: http://localhost:8000/product.html?id=4]
+12:41:55.901 INFO - Executing: [find elements: By.cssSelector: #add-to-cart-form input])
+12:41:55.922 INFO - Done: [find elements: By.cssSelector: #add-to-cart-form input]
+12:41:55.928 INFO - Executing: [clear: 4 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: #add-to-cart-form input]])
+12:41:55.989 INFO - Done: [clear: 4 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: #add-to-cart-form input]]
+12:41:55.996 INFO - Executing: [find elements: By.cssSelector: #add-to-cart-form input])
+12:41:56.005 INFO - Done: [find elements: By.cssSelector: #add-to-cart-form input]
+12:41:56.012 INFO - Executing: [send keys: 4 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: #add-to-cart-form input], [9]])
+12:41:56.055 INFO - Done: [send keys: 4 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: #add-to-cart-form input], [9]]
+12:41:56.061 INFO - Executing: [find elements: By.cssSelector: #add-to-cart-form])
+12:41:56.072 INFO - Done: [find elements: By.cssSelector: #add-to-cart-form]
+12:41:56.078 INFO - Executing: [submit: 5 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: #add-to-cart-form]])
+12:41:56.093 INFO - Done: [submit: 5 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: #add-to-cart-form]]
+12:41:56.137 INFO - Executing: [get: http://localhost:8000/product.html?id=9])
+12:41:56.237 INFO - Done: [get: http://localhost:8000/product.html?id=9]
+12:41:56.398 INFO - Executing: [find elements: By.cssSelector: #add-to-cart-form input])
+12:41:56.413 INFO - Done: [find elements: By.cssSelector: #add-to-cart-form input]
+12:41:56.416 INFO - Executing: [clear: 6 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: #add-to-cart-form input]])
+12:41:56.466 INFO - Done: [clear: 6 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: #add-to-cart-form input]]
+12:41:56.471 INFO - Executing: [find elements: By.cssSelector: #add-to-cart-form input])
+12:41:56.485 INFO - Done: [find elements: By.cssSelector: #add-to-cart-form input]
+12:41:56.491 INFO - Executing: [send keys: 6 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: #add-to-cart-form input], [6]])
+12:41:56.534 INFO - Done: [send keys: 6 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: #add-to-cart-form input], [6]]
+12:41:56.543 INFO - Executing: [find elements: By.cssSelector: #add-to-cart-form])
+12:41:56.556 INFO - Done: [find elements: By.cssSelector: #add-to-cart-form]
+12:41:56.563 INFO - Executing: [submit: 7 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: #add-to-cart-form]])
+12:41:56.579 INFO - Done: [submit: 7 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: #add-to-cart-form]]
+12:41:56.605 INFO - Executing: [get: http://localhost:8000/product.html?id=11])
+12:41:56.705 INFO - Done: [get: http://localhost:8000/product.html?id=11]
+12:41:56.869 INFO - Executing: [find elements: By.cssSelector: #add-to-cart-form input])
+12:41:56.883 INFO - Done: [find elements: By.cssSelector: #add-to-cart-form input]
+12:41:56.887 INFO - Executing: [clear: 8 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: #add-to-cart-form input]])
+12:41:56.935 INFO - Done: [clear: 8 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: #add-to-cart-form input]]
+12:41:56.943 INFO - Executing: [find elements: By.cssSelector: #add-to-cart-form input])
+12:41:56.959 INFO - Done: [find elements: By.cssSelector: #add-to-cart-form input]
+12:41:56.962 INFO - Executing: [send keys: 8 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: #add-to-cart-form input], [3]])
+12:41:57.014 INFO - Done: [send keys: 8 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: #add-to-cart-form input], [3]]
+12:41:57.017 INFO - Executing: [find elements: By.cssSelector: #add-to-cart-form])
+12:41:57.033 INFO - Done: [find elements: By.cssSelector: #add-to-cart-form]
+12:41:57.037 INFO - Executing: [submit: 9 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: #add-to-cart-form]])
+12:41:57.053 INFO - Done: [submit: 9 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: #add-to-cart-form]]
+12:41:57.067 INFO - Executing: [get: http://localhost:8000/product.html?id=7])
+12:41:57.165 INFO - Done: [get: http://localhost:8000/product.html?id=7]
+12:41:57.325 INFO - Executing: [find elements: By.cssSelector: #add-to-cart-form input])
+12:41:57.334 INFO - Done: [find elements: By.cssSelector: #add-to-cart-form input]
+12:41:57.340 INFO - Executing: [clear: 10 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: #add-to-cart-form input]])
+12:41:57.387 INFO - Done: [clear: 10 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: #add-to-cart-form input]]
+12:41:57.394 INFO - Executing: [find elements: By.cssSelector: #add-to-cart-form input])
+12:41:57.410 INFO - Done: [find elements: By.cssSelector: #add-to-cart-form input]
+12:41:57.416 INFO - Executing: [send keys: 10 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: #add-to-cart-form input], [8]])
+12:41:57.462 INFO - Done: [send keys: 10 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: #add-to-cart-form input], [8]]
+12:41:57.466 INFO - Executing: [find elements: By.cssSelector: #add-to-cart-form])
+12:41:57.478 INFO - Done: [find elements: By.cssSelector: #add-to-cart-form]
+12:41:57.483 INFO - Executing: [submit: 11 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: #add-to-cart-form]])
+12:41:57.497 INFO - Done: [submit: 11 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: #add-to-cart-form]]
+12:41:57.502 INFO - Executing: [get: http://localhost:8000/product.html?id=13])
+12:41:57.586 INFO - Done: [get: http://localhost:8000/product.html?id=13]
+12:41:57.744 INFO - Executing: [find elements: By.cssSelector: #add-to-cart-form input])
+12:41:57.757 INFO - Done: [find elements: By.cssSelector: #add-to-cart-form input]
+12:41:57.760 INFO - Executing: [clear: 12 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: #add-to-cart-form input]])
+12:41:57.806 INFO - Done: [clear: 12 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: #add-to-cart-form input]]
+12:41:57.812 INFO - Executing: [find elements: By.cssSelector: #add-to-cart-form input])
+12:41:57.823 INFO - Done: [find elements: By.cssSelector: #add-to-cart-form input]
+12:41:57.827 INFO - Executing: [send keys: 12 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: #add-to-cart-form input], [7]])
+12:41:57.864 INFO - Done: [send keys: 12 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: #add-to-cart-form input], [7]]
+12:41:57.867 INFO - Executing: [find elements: By.cssSelector: #add-to-cart-form])
+12:41:57.878 INFO - Done: [find elements: By.cssSelector: #add-to-cart-form]
+12:41:57.881 INFO - Executing: [submit: 13 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: #add-to-cart-form]])
+12:41:57.893 INFO - Done: [submit: 13 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: #add-to-cart-form]]
+12:41:57.898 INFO - Executing: [get: http://localhost:8000/product.html?id=3])
+12:41:57.982 INFO - Done: [get: http://localhost:8000/product.html?id=3]
+12:41:58.141 INFO - Executing: [find elements: By.cssSelector: #add-to-cart-form input])
+12:41:58.154 INFO - Done: [find elements: By.cssSelector: #add-to-cart-form input]
+12:41:58.160 INFO - Executing: [clear: 14 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: #add-to-cart-form input]])
+12:41:58.199 INFO - Done: [clear: 14 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: #add-to-cart-form input]]
+12:41:58.202 INFO - Executing: [find elements: By.cssSelector: #add-to-cart-form input])
+12:41:58.213 INFO - Done: [find elements: By.cssSelector: #add-to-cart-form input]
+12:41:58.216 INFO - Executing: [send keys: 14 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: #add-to-cart-form input], [1, 0]])
+12:41:58.271 INFO - Done: [send keys: 14 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: #add-to-cart-form input], [1, 0]]
+12:41:58.278 INFO - Executing: [find elements: By.cssSelector: #add-to-cart-form])
+12:41:58.286 INFO - Done: [find elements: By.cssSelector: #add-to-cart-form]
+12:41:58.290 INFO - Executing: [submit: 15 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: #add-to-cart-form]])
+12:41:58.299 INFO - Done: [submit: 15 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: #add-to-cart-form]]
+12:41:58.305 INFO - Executing: [get: http://localhost:8000/product.html?id=5])
+12:41:58.380 INFO - Done: [get: http://localhost:8000/product.html?id=5]
+12:41:58.540 INFO - Executing: [find elements: By.cssSelector: #add-to-cart-form input])
+12:41:58.552 INFO - Done: [find elements: By.cssSelector: #add-to-cart-form input]
+12:41:58.558 INFO - Executing: [clear: 16 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: #add-to-cart-form input]])
+12:41:58.605 INFO - Done: [clear: 16 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: #add-to-cart-form input]]
+12:41:58.611 INFO - Executing: [find elements: By.cssSelector: #add-to-cart-form input])
+12:41:58.626 INFO - Done: [find elements: By.cssSelector: #add-to-cart-form input]
+12:41:58.630 INFO - Executing: [send keys: 16 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: #add-to-cart-form input], [1]])
+12:41:58.669 INFO - Done: [send keys: 16 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: #add-to-cart-form input], [1]]
+12:41:58.677 INFO - Executing: [find elements: By.cssSelector: #add-to-cart-form])
+12:41:58.688 INFO - Done: [find elements: By.cssSelector: #add-to-cart-form]
+12:41:58.691 INFO - Executing: [submit: 17 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: #add-to-cart-form]])
+12:41:58.702 INFO - Done: [submit: 17 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: #add-to-cart-form]]
+12:41:58.707 INFO - Executing: [get: http://localhost:8000/product.html?id=6])
+12:41:58.783 INFO - Done: [get: http://localhost:8000/product.html?id=6]
+12:41:58.945 INFO - Executing: [find elements: By.cssSelector: #add-to-cart-form input])
+12:41:58.956 INFO - Done: [find elements: By.cssSelector: #add-to-cart-form input]
+12:41:58.960 INFO - Executing: [clear: 18 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: #add-to-cart-form input]])
+12:41:59.002 INFO - Done: [clear: 18 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: #add-to-cart-form input]]
+12:41:59.011 INFO - Executing: [find elements: By.cssSelector: #add-to-cart-form input])
+12:41:59.027 INFO - Done: [find elements: By.cssSelector: #add-to-cart-form input]
+12:41:59.032 INFO - Executing: [send keys: 18 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: #add-to-cart-form input], [5]])
+12:41:59.083 INFO - Done: [send keys: 18 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: #add-to-cart-form input], [5]]
+12:41:59.087 INFO - Executing: [find elements: By.cssSelector: #add-to-cart-form])
+12:41:59.102 INFO - Done: [find elements: By.cssSelector: #add-to-cart-form]
+12:41:59.107 INFO - Executing: [submit: 19 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: #add-to-cart-form]])
+12:41:59.119 INFO - Done: [submit: 19 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: #add-to-cart-form]]
+12:41:59.134 INFO - Executing: [get: http://localhost:8000/product.html?id=10])
+12:41:59.267 INFO - Done: [get: http://localhost:8000/product.html?id=10]
+12:41:59.423 INFO - Executing: [find elements: By.cssSelector: #add-to-cart-form input])
+12:41:59.431 INFO - Done: [find elements: By.cssSelector: #add-to-cart-form input]
+12:41:59.434 INFO - Executing: [clear: 20 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: #add-to-cart-form input]])
+12:41:59.475 INFO - Done: [clear: 20 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: #add-to-cart-form input]]
+12:41:59.479 INFO - Executing: [find elements: By.cssSelector: #add-to-cart-form input])
+12:41:59.490 INFO - Done: [find elements: By.cssSelector: #add-to-cart-form input]
+12:41:59.492 INFO - Executing: [send keys: 20 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: #add-to-cart-form input], [2]])
+12:41:59.529 INFO - Done: [send keys: 20 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: #add-to-cart-form input], [2]]
+12:41:59.532 INFO - Executing: [find elements: By.cssSelector: #add-to-cart-form])
+12:41:59.543 INFO - Done: [find elements: By.cssSelector: #add-to-cart-form]
+12:41:59.546 INFO - Executing: [submit: 21 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: #add-to-cart-form]])
+12:41:59.556 INFO - Done: [submit: 21 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: #add-to-cart-form]]
+12:41:59.561 INFO - Executing: [get: http://localhost:8000/shopping-cart.html])
+12:41:59.650 INFO - Done: [get: http://localhost:8000/shopping-cart.html]
+12:41:59.811 INFO - Executing: [find elements: By.cssSelector: table tr])
+12:41:59.832 INFO - Done: [find elements: By.cssSelector: table tr]
+12:41:59.838 INFO - Executing: [get text: 23 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: table tr]])
+12:41:59.871 INFO - Done: [get text: 23 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: table tr]]
+12:41:59.954 INFO - Executing: [find elements: By.cssSelector: .remove-item-button])
+12:41:59.969 INFO - Done: [find elements: By.cssSelector: .remove-item-button]
+12:42:00.474 INFO - Executing: [find elements: By.cssSelector: .remove-item-button])
+12:42:00.483 INFO - Done: [find elements: By.cssSelector: .remove-item-button]
+12:42:00.986 INFO - Executing: [find elements: By.cssSelector: .remove-item-button])
+12:42:00.996 INFO - Done: [find elements: By.cssSelector: .remove-item-button]
+12:42:01.500 INFO - Executing: [find elements: By.cssSelector: .remove-item-button])
+12:42:01.509 INFO - Done: [find elements: By.cssSelector: .remove-item-button]
+12:42:02.012 INFO - Executing: [find elements: By.cssSelector: .remove-item-button])
+12:42:02.023 INFO - Done: [find elements: By.cssSelector: .remove-item-button]
+12:42:02.530 INFO - Executing: [find elements: By.cssSelector: .remove-item-button])
+12:42:02.549 INFO - Done: [find elements: By.cssSelector: .remove-item-button]
+12:42:03.054 INFO - Executing: [find elements: By.cssSelector: .remove-item-button])
+12:42:03.067 INFO - Done: [find elements: By.cssSelector: .remove-item-button]
+12:42:03.573 INFO - Executing: [find elements: By.cssSelector: .remove-item-button])
+12:42:03.584 INFO - Done: [find elements: By.cssSelector: .remove-item-button]
+12:42:04.089 INFO - Executing: [find elements: By.cssSelector: .remove-item-button])
+12:42:04.099 INFO - Done: [find elements: By.cssSelector: .remove-item-button]
+12:42:04.604 INFO - Executing: [find elements: By.cssSelector: .remove-item-button])
+12:42:04.620 INFO - Done: [find elements: By.cssSelector: .remove-item-button]
+12:42:05.126 INFO - Executing: [find elements: By.cssSelector: .remove-item-button])
+12:42:05.137 INFO - Done: [find elements: By.cssSelector: .remove-item-button]
+12:42:05.148 INFO - Executing: [dismiss alert])
+12:42:05.159 INFO - HTTP Status: '404' -> incorrect JSON status mapping for 'no such alert' (400 expected)
+12:42:05.165 WARN - Exception thrown
+org.openqa.selenium.NoAlertPresentException: no such alert
+  (Session info: chrome=85.0.4183.121)
+Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
+System info: host: 'DESKTOP-N37LB2A', ip: '192.168.0.149', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '13.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{networkConnectionEnabled=false, chrome={chromedriverVersion=85.0.4183.87 (cd6713ebf92fa1cacc0f1a598df280093af0c5d7-refs/branch-heads/4183@{#1689}), userDataDir=C:\Users\pasca\AppData\Local\Temp\scoped_dir8044_1472298924}, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, unhandledPromptBehavior=dismiss and notify, strictFileInteractability=false, platform=ANY, proxy=Proxy(), goog:chromeOptions={debuggerAddress=localhost:57015}, acceptInsecureCerts=false, browserVersion=85.0.4183.121, browserName=chrome, javascriptEnabled=true, platformName=windows, setWindowRect=true, webauthn:virtualAuthenticators=true}]
+Session ID: d054de14f1fe99257d44c7bc93c71120
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:150)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:115)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:45)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:82)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:637)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:694)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteTargetLocator.alert(RemoteWebDriver.java:1020)
+	at org.openqa.selenium.support.events.EventFiringWebDriver$EventFiringTargetLocator.alert(EventFiringWebDriver.java:612)
+	at org.openqa.selenium.remote.server.handler.DismissAlert.call(DismissAlert.java:30)
+	at org.openqa.selenium.remote.server.handler.DismissAlert.call(DismissAlert.java:22)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.openqa.selenium.remote.server.DefaultSession$1.run(DefaultSession.java:176)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+12:42:05.167 WARN - Exception: no such alert
+  (Session info: chrome=85.0.4183.121)
+Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
+System info: host: 'DESKTOP-N37LB2A', ip: '192.168.0.149', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '13.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{networkConnectionEnabled=false, chrome={chromedriverVersion=85.0.4183.87 (cd6713ebf92fa1cacc0f1a598df280093af0c5d7-refs/branch-heads/4183@{#1689}), userDataDir=C:\Users\pasca\AppData\Local\Temp\scoped_dir8044_1472298924}, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, unhandledPromptBehavior=dismiss and notify, strictFileInteractability=false, platform=ANY, proxy=Proxy(), goog:chromeOptions={debuggerAddress=localhost:57015}, acceptInsecureCerts=false, browserVersion=85.0.4183.121, browserName=chrome, javascriptEnabled=true, platformName=windows, setWindowRect=true, webauthn:virtualAuthenticators=true}]
+Session ID: d054de14f1fe99257d44c7bc93c71120
+12:42:05.388 INFO - Executing: [find elements: By.cssSelector: table tr])
+12:42:05.402 INFO - Done: [find elements: By.cssSelector: table tr]
+12:42:05.410 INFO - Executing: [get text: 23 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: table tr]])
+12:42:05.430 INFO - Done: [get text: 23 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: table tr]]
+12:42:05.466 INFO - Executing: [find elements: By.cssSelector: .add-quantity-button])
+12:42:05.482 INFO - Done: [find elements: By.cssSelector: .add-quantity-button]
+12:42:05.990 INFO - Executing: [find elements: By.cssSelector: .add-quantity-button])
+12:42:06.001 INFO - Done: [find elements: By.cssSelector: .add-quantity-button]
+12:42:06.506 INFO - Executing: [find elements: By.cssSelector: .add-quantity-button])
+12:42:06.515 INFO - Done: [find elements: By.cssSelector: .add-quantity-button]
+12:42:07.019 INFO - Executing: [find elements: By.cssSelector: .add-quantity-button])
+12:42:07.032 INFO - Done: [find elements: By.cssSelector: .add-quantity-button]
+12:42:07.536 INFO - Executing: [find elements: By.cssSelector: .add-quantity-button])
+12:42:07.547 INFO - Done: [find elements: By.cssSelector: .add-quantity-button]
+12:42:08.050 INFO - Executing: [find elements: By.cssSelector: .add-quantity-button])
+12:42:08.060 INFO - Done: [find elements: By.cssSelector: .add-quantity-button]
+12:42:08.563 INFO - Executing: [find elements: By.cssSelector: .add-quantity-button])
+12:42:08.573 INFO - Done: [find elements: By.cssSelector: .add-quantity-button]
+12:42:09.077 INFO - Executing: [find elements: By.cssSelector: .add-quantity-button])
+12:42:09.088 INFO - Done: [find elements: By.cssSelector: .add-quantity-button]
+12:42:09.592 INFO - Executing: [find elements: By.cssSelector: .add-quantity-button])
+12:42:09.601 INFO - Done: [find elements: By.cssSelector: .add-quantity-button]
+12:42:10.106 INFO - Executing: [find elements: By.cssSelector: .add-quantity-button])
+12:42:10.119 INFO - Done: [find elements: By.cssSelector: .add-quantity-button]
+12:42:10.624 INFO - Executing: [find elements: By.cssSelector: .add-quantity-button])
+12:42:10.634 INFO - Done: [find elements: By.cssSelector: .add-quantity-button]
+12:42:10.792 INFO - Executing: [find elements: By.cssSelector: table tr])
+12:42:10.804 INFO - Done: [find elements: By.cssSelector: table tr]
+12:42:10.809 INFO - Executing: [get text: 23 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: table tr]])
+12:42:10.828 INFO - Done: [get text: 23 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: table tr]]
+12:42:10.851 INFO - Executing: [find elements: By.cssSelector: .remove-quantity-button])
+12:42:10.864 INFO - Done: [find elements: By.cssSelector: .remove-quantity-button]
+12:42:11.372 INFO - Executing: [find elements: By.cssSelector: .remove-quantity-button])
+12:42:11.393 INFO - Done: [find elements: By.cssSelector: .remove-quantity-button]
+12:42:11.901 INFO - Executing: [find elements: By.cssSelector: .remove-quantity-button])
+12:42:11.912 INFO - Done: [find elements: By.cssSelector: .remove-quantity-button]
+12:42:12.416 INFO - Executing: [find elements: By.cssSelector: .remove-quantity-button])
+12:42:12.425 INFO - Done: [find elements: By.cssSelector: .remove-quantity-button]
+12:42:12.929 INFO - Executing: [find elements: By.cssSelector: .remove-quantity-button])
+12:42:12.939 INFO - Done: [find elements: By.cssSelector: .remove-quantity-button]
+12:42:13.442 INFO - Executing: [find elements: By.cssSelector: .remove-quantity-button])
+12:42:13.452 INFO - Done: [find elements: By.cssSelector: .remove-quantity-button]
+12:42:13.956 INFO - Executing: [find elements: By.cssSelector: .remove-quantity-button])
+12:42:13.966 INFO - Done: [find elements: By.cssSelector: .remove-quantity-button]
+12:42:14.470 INFO - Executing: [find elements: By.cssSelector: .remove-quantity-button])
+12:42:14.481 INFO - Done: [find elements: By.cssSelector: .remove-quantity-button]
+12:42:14.984 INFO - Executing: [find elements: By.cssSelector: .remove-quantity-button])
+12:42:14.994 INFO - Done: [find elements: By.cssSelector: .remove-quantity-button]
+12:42:15.498 INFO - Executing: [find elements: By.cssSelector: .remove-quantity-button])
+12:42:15.506 INFO - Done: [find elements: By.cssSelector: .remove-quantity-button]
+12:42:16.011 INFO - Executing: [find elements: By.cssSelector: .remove-quantity-button])
+12:42:16.022 INFO - Done: [find elements: By.cssSelector: .remove-quantity-button]
+12:42:16.183 INFO - Executing: [find elements: By.cssSelector: table tr])
+12:42:16.206 INFO - Done: [find elements: By.cssSelector: table tr]
+12:42:16.215 INFO - Executing: [get text: 23 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: table tr]])
+12:42:16.235 INFO - Done: [get text: 23 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: table tr]]
+12:42:16.266 INFO - Executing: [find elements: By.cssSelector: #remove-all-items-button])
+12:42:16.280 INFO - Done: [find elements: By.cssSelector: #remove-all-items-button]
+12:42:16.784 INFO - Executing: [find elements: By.cssSelector: #remove-all-items-button])
+12:42:16.793 INFO - Done: [find elements: By.cssSelector: #remove-all-items-button]
+12:42:17.299 INFO - Executing: [find elements: By.cssSelector: #remove-all-items-button])
+12:42:17.322 INFO - Done: [find elements: By.cssSelector: #remove-all-items-button]
+12:42:17.826 INFO - Executing: [find elements: By.cssSelector: #remove-all-items-button])
+12:42:17.839 INFO - Done: [find elements: By.cssSelector: #remove-all-items-button]
+12:42:18.343 INFO - Executing: [find elements: By.cssSelector: #remove-all-items-button])
+12:42:18.354 INFO - Done: [find elements: By.cssSelector: #remove-all-items-button]
+12:42:18.861 INFO - Executing: [find elements: By.cssSelector: #remove-all-items-button])
+12:42:18.885 INFO - Done: [find elements: By.cssSelector: #remove-all-items-button]
+12:42:19.393 INFO - Executing: [find elements: By.cssSelector: #remove-all-items-button])
+12:42:19.409 INFO - Done: [find elements: By.cssSelector: #remove-all-items-button]
+12:42:19.913 INFO - Executing: [find elements: By.cssSelector: #remove-all-items-button])
+12:42:19.921 INFO - Done: [find elements: By.cssSelector: #remove-all-items-button]
+12:42:20.427 INFO - Executing: [find elements: By.cssSelector: #remove-all-items-button])
+12:42:20.449 INFO - Done: [find elements: By.cssSelector: #remove-all-items-button]
+12:42:20.955 INFO - Executing: [find elements: By.cssSelector: #remove-all-items-button])
+12:42:20.965 INFO - Done: [find elements: By.cssSelector: #remove-all-items-button]
+12:42:21.473 INFO - Executing: [find elements: By.cssSelector: #remove-all-items-button])
+12:42:21.490 INFO - Done: [find elements: By.cssSelector: #remove-all-items-button]
+12:42:21.496 INFO - Executing: [dismiss alert])
+12:42:21.501 INFO - HTTP Status: '404' -> incorrect JSON status mapping for 'no such alert' (400 expected)
+12:42:21.501 WARN - Exception thrown
+org.openqa.selenium.NoAlertPresentException: no such alert
+  (Session info: chrome=85.0.4183.121)
+Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
+System info: host: 'DESKTOP-N37LB2A', ip: '192.168.0.149', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '13.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{networkConnectionEnabled=false, chrome={chromedriverVersion=85.0.4183.87 (cd6713ebf92fa1cacc0f1a598df280093af0c5d7-refs/branch-heads/4183@{#1689}), userDataDir=C:\Users\pasca\AppData\Local\Temp\scoped_dir8044_1472298924}, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, unhandledPromptBehavior=dismiss and notify, strictFileInteractability=false, platform=ANY, proxy=Proxy(), goog:chromeOptions={debuggerAddress=localhost:57015}, acceptInsecureCerts=false, browserVersion=85.0.4183.121, browserName=chrome, javascriptEnabled=true, platformName=windows, setWindowRect=true, webauthn:virtualAuthenticators=true}]
+Session ID: d054de14f1fe99257d44c7bc93c71120
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:150)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:115)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:45)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:82)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:637)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:694)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteTargetLocator.alert(RemoteWebDriver.java:1020)
+	at org.openqa.selenium.support.events.EventFiringWebDriver$EventFiringTargetLocator.alert(EventFiringWebDriver.java:612)
+	at org.openqa.selenium.remote.server.handler.DismissAlert.call(DismissAlert.java:30)
+	at org.openqa.selenium.remote.server.handler.DismissAlert.call(DismissAlert.java:22)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.openqa.selenium.remote.server.DefaultSession$1.run(DefaultSession.java:176)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+12:42:21.502 WARN - Exception: no such alert
+  (Session info: chrome=85.0.4183.121)
+Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
+System info: host: 'DESKTOP-N37LB2A', ip: '192.168.0.149', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '13.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{networkConnectionEnabled=false, chrome={chromedriverVersion=85.0.4183.87 (cd6713ebf92fa1cacc0f1a598df280093af0c5d7-refs/branch-heads/4183@{#1689}), userDataDir=C:\Users\pasca\AppData\Local\Temp\scoped_dir8044_1472298924}, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, unhandledPromptBehavior=dismiss and notify, strictFileInteractability=false, platform=ANY, proxy=Proxy(), goog:chromeOptions={debuggerAddress=localhost:57015}, acceptInsecureCerts=false, browserVersion=85.0.4183.121, browserName=chrome, javascriptEnabled=true, platformName=windows, setWindowRect=true, webauthn:virtualAuthenticators=true}]
+Session ID: d054de14f1fe99257d44c7bc93c71120
+12:42:21.690 INFO - Executing: [find elements: By.cssSelector: table tr])
+12:42:21.704 INFO - Done: [find elements: By.cssSelector: table tr]
+12:42:21.709 INFO - Executing: [get text: 23 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: table tr]])
+12:42:21.726 INFO - Done: [get text: 23 [[ChromeDriver: chrome on ANY (d054de14f1fe99257d44c7bc93c71120)] -> css selector: table tr]]
+12:42:21.828 INFO - Executing: [new session: Capabilities [{acceptSslCerts=true, marionette=true, name=4 Order, browserName=chrome, javascriptEnabled=true, platform=ANY}]])
+12:42:21.830 INFO - Creating a new session for Capabilities [{acceptSslCerts=true, marionette=true, name=4 Order, browserName=chrome, javascriptEnabled=true, platform=ANY}]
+Starting ChromeDriver 85.0.4183.87 (cd6713ebf92fa1cacc0f1a598df280093af0c5d7-refs/branch-heads/4183@{#1689}) on port 29263
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+12:42:24.911 INFO - Detected dialect: W3C
+12:42:24.913 INFO - Done: [new session: Capabilities [{acceptSslCerts=true, marionette=true, name=4 Order, browserName=chrome, javascriptEnabled=true, platform=ANY}]]
+12:42:24.926 INFO - Executing: [get: http://localhost:8000/product.html?id=7])
+12:42:25.659 INFO - Done: [get: http://localhost:8000/product.html?id=7]
+12:42:25.665 INFO - Executing: [find elements: By.cssSelector: #add-to-cart-form input])
+12:42:25.689 INFO - Done: [find elements: By.cssSelector: #add-to-cart-form input]
+12:42:25.692 INFO - Executing: [clear: 0 [[ChromeDriver: chrome on ANY (75375b51348cf91b453632691a0f0765)] -> css selector: #add-to-cart-form input]])
+12:42:25.743 INFO - Done: [clear: 0 [[ChromeDriver: chrome on ANY (75375b51348cf91b453632691a0f0765)] -> css selector: #add-to-cart-form input]]
+12:42:25.747 INFO - Executing: [find elements: By.cssSelector: #add-to-cart-form input])
+12:42:25.759 INFO - Done: [find elements: By.cssSelector: #add-to-cart-form input]
+12:42:25.763 INFO - Executing: [send keys: 0 [[ChromeDriver: chrome on ANY (75375b51348cf91b453632691a0f0765)] -> css selector: #add-to-cart-form input], [1]])
+12:42:25.811 INFO - Done: [send keys: 0 [[ChromeDriver: chrome on ANY (75375b51348cf91b453632691a0f0765)] -> css selector: #add-to-cart-form input], [1]]
+12:42:25.813 INFO - Executing: [find elements: By.cssSelector: #add-to-cart-form])
+12:42:25.828 INFO - Done: [find elements: By.cssSelector: #add-to-cart-form]
+12:42:25.832 INFO - Executing: [submit: 1 [[ChromeDriver: chrome on ANY (75375b51348cf91b453632691a0f0765)] -> css selector: #add-to-cart-form]])
+12:42:25.843 INFO - Done: [submit: 1 [[ChromeDriver: chrome on ANY (75375b51348cf91b453632691a0f0765)] -> css selector: #add-to-cart-form]]
+12:42:25.847 INFO - Executing: [get: http://localhost:8000/order.html])
+12:42:25.939 INFO - Done: [get: http://localhost:8000/order.html]
+12:42:25.947 INFO - Executing: [find elements: By.cssSelector: .shopping-cart > .count])
+12:42:25.965 INFO - Done: [find elements: By.cssSelector: .shopping-cart > .count]
+12:42:25.970 INFO - Executing: [is displayed: 2 [[ChromeDriver: chrome on ANY (75375b51348cf91b453632691a0f0765)] -> css selector: .shopping-cart > .count]])
+12:42:25.992 INFO - Done: [is displayed: 2 [[ChromeDriver: chrome on ANY (75375b51348cf91b453632691a0f0765)] -> css selector: .shopping-cart > .count]]
+12:42:25.998 INFO - Executing: [find elements: By.cssSelector: .shopping-cart > .count])
+12:42:26.009 INFO - Done: [find elements: By.cssSelector: .shopping-cart > .count]
+12:42:26.011 INFO - Executing: [get text: 2 [[ChromeDriver: chrome on ANY (75375b51348cf91b453632691a0f0765)] -> css selector: .shopping-cart > .count]])
+12:42:26.028 INFO - Done: [get text: 2 [[ChromeDriver: chrome on ANY (75375b51348cf91b453632691a0f0765)] -> css selector: .shopping-cart > .count]]
+12:42:26.035 INFO - Executing: [delete session: 2997df66-a31c-42df-858a-25c2518287f6])
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.openqa.selenium.os.ProcessUtils (file:/C:/Users/pasca/OneDrive/Documents/LOG%207e%20session/LOG4420/Git/LOG4420/TP3/tests/bin/selenium-server-standalone-3.4.0.jar) to field java.lang.ProcessImpl.handle
+WARNING: Please consider reporting this to the maintainers of org.openqa.selenium.os.ProcessUtils
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+12:42:26.870 INFO - Done: [delete session: 2997df66-a31c-42df-858a-25c2518287f6]
+12:42:26.896 INFO - Executing: [new session: Capabilities [{acceptSslCerts=true, marionette=true, name=4 Order, browserName=chrome, javascriptEnabled=true, platform=ANY}]])
+12:42:26.898 INFO - Creating a new session for Capabilities [{acceptSslCerts=true, marionette=true, name=4 Order, browserName=chrome, javascriptEnabled=true, platform=ANY}]
+Starting ChromeDriver 85.0.4183.87 (cd6713ebf92fa1cacc0f1a598df280093af0c5d7-refs/branch-heads/4183@{#1689}) on port 45777
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+12:42:30.019 INFO - Detected dialect: W3C
+12:42:30.020 INFO - Done: [new session: Capabilities [{acceptSslCerts=true, marionette=true, name=4 Order, browserName=chrome, javascriptEnabled=true, platform=ANY}]]
+12:42:30.033 INFO - Executing: [get: http://localhost:8000/product.html?id=2])
+12:42:30.859 INFO - Done: [get: http://localhost:8000/product.html?id=2]
+12:42:30.862 INFO - Executing: [find elements: By.cssSelector: #add-to-cart-form input])
+12:42:30.887 INFO - Done: [find elements: By.cssSelector: #add-to-cart-form input]
+12:42:30.891 INFO - Executing: [clear: 0 [[ChromeDriver: chrome on ANY (734c5b1bd471186d65e85a1184fdefd8)] -> css selector: #add-to-cart-form input]])
+12:42:30.941 INFO - Done: [clear: 0 [[ChromeDriver: chrome on ANY (734c5b1bd471186d65e85a1184fdefd8)] -> css selector: #add-to-cart-form input]]
+12:42:30.945 INFO - Executing: [find elements: By.cssSelector: #add-to-cart-form input])
+12:42:30.954 INFO - Done: [find elements: By.cssSelector: #add-to-cart-form input]
+12:42:30.956 INFO - Executing: [send keys: 0 [[ChromeDriver: chrome on ANY (734c5b1bd471186d65e85a1184fdefd8)] -> css selector: #add-to-cart-form input], [1]])
+12:42:30.989 INFO - Done: [send keys: 0 [[ChromeDriver: chrome on ANY (734c5b1bd471186d65e85a1184fdefd8)] -> css selector: #add-to-cart-form input], [1]]
+12:42:30.991 INFO - Executing: [find elements: By.cssSelector: #add-to-cart-form])
+12:42:31.005 INFO - Done: [find elements: By.cssSelector: #add-to-cart-form]
+12:42:31.010 INFO - Executing: [submit: 1 [[ChromeDriver: chrome on ANY (734c5b1bd471186d65e85a1184fdefd8)] -> css selector: #add-to-cart-form]])
+12:42:31.020 INFO - Done: [submit: 1 [[ChromeDriver: chrome on ANY (734c5b1bd471186d65e85a1184fdefd8)] -> css selector: #add-to-cart-form]]
+12:42:31.024 INFO - Executing: [get: http://localhost:8000/order.html])
+12:42:31.107 INFO - Done: [get: http://localhost:8000/order.html]
+12:42:31.112 INFO - Executing: [find elements: By.cssSelector: #order-form])
+12:42:31.129 INFO - Done: [find elements: By.cssSelector: #order-form]
+12:42:31.635 INFO - Executing: [find elements: By.cssSelector: #order-form])
+12:42:31.647 INFO - Done: [find elements: By.cssSelector: #order-form]
+12:42:32.155 INFO - Executing: [find elements: By.cssSelector: #order-form])
+12:42:32.170 INFO - Done: [find elements: By.cssSelector: #order-form]
+12:42:32.676 INFO - Executing: [find elements: By.cssSelector: #order-form])
+12:42:32.686 INFO - Done: [find elements: By.cssSelector: #order-form]
+12:42:33.192 INFO - Executing: [find elements: By.cssSelector: #order-form])
+12:42:33.210 INFO - Done: [find elements: By.cssSelector: #order-form]
+12:42:33.715 INFO - Executing: [find elements: By.cssSelector: #order-form])
+12:42:33.724 INFO - Done: [find elements: By.cssSelector: #order-form]
+12:42:34.227 INFO - Executing: [find elements: By.cssSelector: #order-form])
+12:42:34.235 INFO - Done: [find elements: By.cssSelector: #order-form]
+12:42:34.739 INFO - Executing: [find elements: By.cssSelector: #order-form])
+12:42:34.747 INFO - Done: [find elements: By.cssSelector: #order-form]
+12:42:35.250 INFO - Executing: [find elements: By.cssSelector: #order-form])
+12:42:35.259 INFO - Done: [find elements: By.cssSelector: #order-form]
+12:42:35.763 INFO - Executing: [find elements: By.cssSelector: #order-form])
+12:42:35.772 INFO - Done: [find elements: By.cssSelector: #order-form]
+12:42:36.275 INFO - Executing: [find elements: By.cssSelector: #order-form])
+12:42:36.285 INFO - Done: [find elements: By.cssSelector: #order-form]
+12:42:36.290 INFO - Executing: [get current url])
+12:42:36.298 INFO - Done: [get current url]
+12:42:36.305 INFO - Executing: [find elements: By.cssSelector: #first-name-error])
+12:42:36.317 INFO - Done: [find elements: By.cssSelector: #first-name-error]
+12:42:36.820 INFO - Executing: [find elements: By.cssSelector: #first-name-error])
+12:42:36.828 INFO - Done: [find elements: By.cssSelector: #first-name-error]
+12:42:37.333 INFO - Executing: [find elements: By.cssSelector: #first-name-error])
+12:42:37.342 INFO - Done: [find elements: By.cssSelector: #first-name-error]
+12:42:37.846 INFO - Executing: [find elements: By.cssSelector: #first-name-error])
+12:42:37.856 INFO - Done: [find elements: By.cssSelector: #first-name-error]
+12:42:38.360 INFO - Executing: [find elements: By.cssSelector: #first-name-error])
+12:42:38.369 INFO - Done: [find elements: By.cssSelector: #first-name-error]
+12:42:38.873 INFO - Executing: [find elements: By.cssSelector: #first-name-error])
+12:42:38.882 INFO - Done: [find elements: By.cssSelector: #first-name-error]
+12:42:39.387 INFO - Executing: [find elements: By.cssSelector: #first-name-error])
+12:42:39.396 INFO - Done: [find elements: By.cssSelector: #first-name-error]
+12:42:39.901 INFO - Executing: [find elements: By.cssSelector: #first-name-error])
+12:42:39.911 INFO - Done: [find elements: By.cssSelector: #first-name-error]
+12:42:40.419 INFO - Executing: [find elements: By.cssSelector: #first-name-error])
+12:42:40.441 INFO - Done: [find elements: By.cssSelector: #first-name-error]
+12:42:40.945 INFO - Executing: [find elements: By.cssSelector: #first-name-error])
+12:42:40.953 INFO - Done: [find elements: By.cssSelector: #first-name-error]
+12:42:41.460 INFO - Executing: [find elements: By.cssSelector: #first-name-error])
+12:42:41.476 INFO - Done: [find elements: By.cssSelector: #first-name-error]
+12:42:41.512 INFO - Executing: [get: http://localhost:8000/product.html?id=9])
+12:42:41.913 INFO - Done: [get: http://localhost:8000/product.html?id=9]
+12:42:41.940 INFO - Executing: [find elements: By.cssSelector: #add-to-cart-form input])
+12:42:41.964 INFO - Done: [find elements: By.cssSelector: #add-to-cart-form input]
+12:42:41.973 INFO - Executing: [clear: 2 [[ChromeDriver: chrome on ANY (734c5b1bd471186d65e85a1184fdefd8)] -> css selector: #add-to-cart-form input]])
+12:42:42.027 INFO - Done: [clear: 2 [[ChromeDriver: chrome on ANY (734c5b1bd471186d65e85a1184fdefd8)] -> css selector: #add-to-cart-form input]]
+12:42:42.029 INFO - Executing: [find elements: By.cssSelector: #add-to-cart-form input])
+12:42:42.040 INFO - Done: [find elements: By.cssSelector: #add-to-cart-form input]
+12:42:42.043 INFO - Executing: [send keys: 2 [[ChromeDriver: chrome on ANY (734c5b1bd471186d65e85a1184fdefd8)] -> css selector: #add-to-cart-form input], [1]])
+12:42:42.089 INFO - Done: [send keys: 2 [[ChromeDriver: chrome on ANY (734c5b1bd471186d65e85a1184fdefd8)] -> css selector: #add-to-cart-form input], [1]]
+12:42:42.092 INFO - Executing: [find elements: By.cssSelector: #add-to-cart-form])
+12:42:42.103 INFO - Done: [find elements: By.cssSelector: #add-to-cart-form]
+12:42:42.107 INFO - Executing: [submit: 3 [[ChromeDriver: chrome on ANY (734c5b1bd471186d65e85a1184fdefd8)] -> css selector: #add-to-cart-form]])
+12:42:42.119 INFO - Done: [submit: 3 [[ChromeDriver: chrome on ANY (734c5b1bd471186d65e85a1184fdefd8)] -> css selector: #add-to-cart-form]]
+12:42:42.124 INFO - Executing: [get: http://localhost:8000/order.html])
+12:42:42.225 INFO - Done: [get: http://localhost:8000/order.html]
+12:42:42.247 INFO - Executing: [find elements: By.cssSelector: #first-name])
+12:42:42.276 INFO - Done: [find elements: By.cssSelector: #first-name]
+12:42:42.279 INFO - Executing: [clear: 4 [[ChromeDriver: chrome on ANY (734c5b1bd471186d65e85a1184fdefd8)] -> css selector: #first-name]])
+12:42:42.328 INFO - Done: [clear: 4 [[ChromeDriver: chrome on ANY (734c5b1bd471186d65e85a1184fdefd8)] -> css selector: #first-name]]
+12:42:42.333 INFO - Executing: [find elements: By.cssSelector: #first-name])
+12:42:42.345 INFO - Done: [find elements: By.cssSelector: #first-name]
+12:42:42.348 INFO - Executing: [send keys: 4 [[ChromeDriver: chrome on ANY (734c5b1bd471186d65e85a1184fdefd8)] -> css selector: #first-name], [A]])
+12:42:42.393 INFO - Done: [send keys: 4 [[ChromeDriver: chrome on ANY (734c5b1bd471186d65e85a1184fdefd8)] -> css selector: #first-name], [A]]
+12:42:42.396 INFO - Executing: [find elements: By.cssSelector: #order-form])
+12:42:42.406 INFO - Done: [find elements: By.cssSelector: #order-form]
+12:42:42.913 INFO - Executing: [find elements: By.cssSelector: #order-form])
+12:42:42.937 INFO - Done: [find elements: By.cssSelector: #order-form]
+12:42:43.443 INFO - Executing: [find elements: By.cssSelector: #order-form])
+12:42:43.451 INFO - Done: [find elements: By.cssSelector: #order-form]
+12:42:43.960 INFO - Executing: [find elements: By.cssSelector: #order-form])
+12:42:43.974 INFO - Done: [find elements: By.cssSelector: #order-form]
+12:42:44.485 INFO - Executing: [find elements: By.cssSelector: #order-form])
+12:42:44.499 INFO - Done: [find elements: By.cssSelector: #order-form]
+12:42:45.003 INFO - Executing: [find elements: By.cssSelector: #order-form])
+12:42:45.013 INFO - Done: [find elements: By.cssSelector: #order-form]
+12:42:45.518 INFO - Executing: [find elements: By.cssSelector: #order-form])
+12:42:45.526 INFO - Done: [find elements: By.cssSelector: #order-form]
+12:42:46.031 INFO - Executing: [find elements: By.cssSelector: #order-form])
+12:42:46.040 INFO - Done: [find elements: By.cssSelector: #order-form]
+12:42:46.544 INFO - Executing: [find elements: By.cssSelector: #order-form])
+12:42:46.552 INFO - Done: [find elements: By.cssSelector: #order-form]
+12:42:47.057 INFO - Executing: [find elements: By.cssSelector: #order-form])
+12:42:47.073 INFO - Done: [find elements: By.cssSelector: #order-form]
+12:42:47.577 INFO - Executing: [find elements: By.cssSelector: #order-form])
+12:42:47.586 INFO - Done: [find elements: By.cssSelector: #order-form]
+12:42:47.590 INFO - Executing: [find elements: By.cssSelector: #first-name-error])
+12:42:47.599 INFO - Done: [find elements: By.cssSelector: #first-name-error]
+12:42:48.104 INFO - Executing: [find elements: By.cssSelector: #first-name-error])
+12:42:48.120 INFO - Done: [find elements: By.cssSelector: #first-name-error]
+12:42:48.623 INFO - Executing: [find elements: By.cssSelector: #first-name-error])
+12:42:48.632 INFO - Done: [find elements: By.cssSelector: #first-name-error]
+12:42:49.137 INFO - Executing: [find elements: By.cssSelector: #first-name-error])
+12:42:49.147 INFO - Done: [find elements: By.cssSelector: #first-name-error]
+12:42:49.653 INFO - Executing: [find elements: By.cssSelector: #first-name-error])
+12:42:49.668 INFO - Done: [find elements: By.cssSelector: #first-name-error]
+12:42:50.174 INFO - Executing: [find elements: By.cssSelector: #first-name-error])
+12:42:50.190 INFO - Done: [find elements: By.cssSelector: #first-name-error]
+12:42:50.693 INFO - Executing: [find elements: By.cssSelector: #first-name-error])
+12:42:50.703 INFO - Done: [find elements: By.cssSelector: #first-name-error]
+12:42:51.206 INFO - Executing: [find elements: By.cssSelector: #first-name-error])
+12:42:51.217 INFO - Done: [find elements: By.cssSelector: #first-name-error]
+12:42:51.720 INFO - Executing: [find elements: By.cssSelector: #first-name-error])
+12:42:51.729 INFO - Done: [find elements: By.cssSelector: #first-name-error]
+12:42:52.234 INFO - Executing: [find elements: By.cssSelector: #first-name-error])
+12:42:52.245 INFO - Done: [find elements: By.cssSelector: #first-name-error]
+12:42:52.748 INFO - Executing: [find elements: By.cssSelector: #first-name-error])
+12:42:52.757 INFO - Done: [find elements: By.cssSelector: #first-name-error]
+12:42:52.793 INFO - Executing: [get: http://localhost:8000/product.html?id=3])
+12:42:53.207 INFO - Done: [get: http://localhost:8000/product.html?id=3]
+12:42:53.212 INFO - Executing: [find elements: By.cssSelector: #add-to-cart-form input])
+12:42:53.238 INFO - Done: [find elements: By.cssSelector: #add-to-cart-form input]
+12:42:53.241 INFO - Executing: [clear: 5 [[ChromeDriver: chrome on ANY (734c5b1bd471186d65e85a1184fdefd8)] -> css selector: #add-to-cart-form input]])
+12:42:53.278 INFO - Done: [clear: 5 [[ChromeDriver: chrome on ANY (734c5b1bd471186d65e85a1184fdefd8)] -> css selector: #add-to-cart-form input]]
+12:42:53.281 INFO - Executing: [find elements: By.cssSelector: #add-to-cart-form input])
+12:42:53.290 INFO - Done: [find elements: By.cssSelector: #add-to-cart-form input]
+12:42:53.292 INFO - Executing: [send keys: 5 [[ChromeDriver: chrome on ANY (734c5b1bd471186d65e85a1184fdefd8)] -> css selector: #add-to-cart-form input], [1]])
+12:42:53.330 INFO - Done: [send keys: 5 [[ChromeDriver: chrome on ANY (734c5b1bd471186d65e85a1184fdefd8)] -> css selector: #add-to-cart-form input], [1]]
+12:42:53.334 INFO - Executing: [find elements: By.cssSelector: #add-to-cart-form])
+12:42:53.345 INFO - Done: [find elements: By.cssSelector: #add-to-cart-form]
+12:42:53.349 INFO - Executing: [submit: 6 [[ChromeDriver: chrome on ANY (734c5b1bd471186d65e85a1184fdefd8)] -> css selector: #add-to-cart-form]])
+12:42:53.357 INFO - Done: [submit: 6 [[ChromeDriver: chrome on ANY (734c5b1bd471186d65e85a1184fdefd8)] -> css selector: #add-to-cart-form]]
+12:42:53.360 INFO - Executing: [get: http://localhost:8000/order.html])
+12:42:53.439 INFO - Done: [get: http://localhost:8000/order.html]
+12:42:53.446 INFO - Executing: [find elements: By.cssSelector: #first-name])
+12:42:53.463 INFO - Done: [find elements: By.cssSelector: #first-name]
+12:42:53.468 INFO - Executing: [clear: 7 [[ChromeDriver: chrome on ANY (734c5b1bd471186d65e85a1184fdefd8)] -> css selector: #first-name]])
+12:42:53.503 INFO - Done: [clear: 7 [[ChromeDriver: chrome on ANY (734c5b1bd471186d65e85a1184fdefd8)] -> css selector: #first-name]]
+12:42:53.506 INFO - Executing: [find elements: By.cssSelector: #first-name])
+12:42:53.516 INFO - Done: [find elements: By.cssSelector: #first-name]
+12:42:53.519 INFO - Executing: [send keys: 7 [[ChromeDriver: chrome on ANY (734c5b1bd471186d65e85a1184fdefd8)] -> css selector: #first-name], [A, n, t, o, i, n, e]])
+12:42:53.568 INFO - Done: [send keys: 7 [[ChromeDriver: chrome on ANY (734c5b1bd471186d65e85a1184fdefd8)] -> css selector: #first-name], [A, n, t, o, i, n, e]]
+12:42:53.571 INFO - Executing: [find elements: By.cssSelector: #last-name])
+12:42:53.585 INFO - Done: [find elements: By.cssSelector: #last-name]
+12:42:53.588 INFO - Executing: [clear: 8 [[ChromeDriver: chrome on ANY (734c5b1bd471186d65e85a1184fdefd8)] -> css selector: #last-name]])
+12:42:53.623 INFO - Done: [clear: 8 [[ChromeDriver: chrome on ANY (734c5b1bd471186d65e85a1184fdefd8)] -> css selector: #last-name]]
+12:42:53.626 INFO - Executing: [find elements: By.cssSelector: #last-name])
+12:42:53.635 INFO - Done: [find elements: By.cssSelector: #last-name]
+12:42:53.638 INFO - Executing: [send keys: 8 [[ChromeDriver: chrome on ANY (734c5b1bd471186d65e85a1184fdefd8)] -> css selector: #last-name], [B, �, l, a, n, d]])
+12:42:53.680 INFO - Done: [send keys: 8 [[ChromeDriver: chrome on ANY (734c5b1bd471186d65e85a1184fdefd8)] -> css selector: #last-name], [B, �, l, a, n, d]]
+12:42:53.684 INFO - Executing: [find elements: By.cssSelector: #email])
+12:42:53.699 INFO - Done: [find elements: By.cssSelector: #email]
+12:42:53.702 INFO - Executing: [clear: 9 [[ChromeDriver: chrome on ANY (734c5b1bd471186d65e85a1184fdefd8)] -> css selector: #email]])
+12:42:53.737 INFO - Done: [clear: 9 [[ChromeDriver: chrome on ANY (734c5b1bd471186d65e85a1184fdefd8)] -> css selector: #email]]
+12:42:53.740 INFO - Executing: [find elements: By.cssSelector: #email])
+12:42:53.749 INFO - Done: [find elements: By.cssSelector: #email]
+12:42:53.752 INFO - Executing: [send keys: 9 [[ChromeDriver: chrome on ANY (734c5b1bd471186d65e85a1184fdefd8)] -> css selector: #email], [a, n, t, o, i, n, e, ., b, e, l, a, n, d, @, p, o, l, y, m, t, l, ., c, a]])
+12:42:53.807 INFO - Done: [send keys: 9 [[ChromeDriver: chrome on ANY (734c5b1bd471186d65e85a1184fdefd8)] -> css selector: #email], [a, n, t, o, i, n, e, ., b, e, l, a, n, d, @, p, o, l, y, m, t, l, ., c, a]]
+12:42:53.810 INFO - Executing: [find elements: By.cssSelector: #phone])
+12:42:53.822 INFO - Done: [find elements: By.cssSelector: #phone]
+12:42:53.824 INFO - Executing: [clear: 10 [[ChromeDriver: chrome on ANY (734c5b1bd471186d65e85a1184fdefd8)] -> css selector: #phone]])
+12:42:53.859 INFO - Done: [clear: 10 [[ChromeDriver: chrome on ANY (734c5b1bd471186d65e85a1184fdefd8)] -> css selector: #phone]]
+12:42:53.862 INFO - Executing: [find elements: By.cssSelector: #phone])
+12:42:53.873 INFO - Done: [find elements: By.cssSelector: #phone]
+12:42:53.875 INFO - Executing: [send keys: 10 [[ChromeDriver: chrome on ANY (734c5b1bd471186d65e85a1184fdefd8)] -> css selector: #phone], [5, 1, 4, -, 3, 4, 0, -, 4, 7, 1, 1]])
+12:42:53.924 INFO - Done: [send keys: 10 [[ChromeDriver: chrome on ANY (734c5b1bd471186d65e85a1184fdefd8)] -> css selector: #phone], [5, 1, 4, -, 3, 4, 0, -, 4, 7, 1, 1]]
+12:42:53.926 INFO - Executing: [find elements: By.cssSelector: #credit-card])
+12:42:53.939 INFO - Done: [find elements: By.cssSelector: #credit-card]
+12:42:53.942 INFO - Executing: [clear: 11 [[ChromeDriver: chrome on ANY (734c5b1bd471186d65e85a1184fdefd8)] -> css selector: #credit-card]])
+12:42:53.974 INFO - Done: [clear: 11 [[ChromeDriver: chrome on ANY (734c5b1bd471186d65e85a1184fdefd8)] -> css selector: #credit-card]]
+12:42:53.978 INFO - Executing: [find elements: By.cssSelector: #credit-card])
+12:42:53.989 INFO - Done: [find elements: By.cssSelector: #credit-card]
+12:42:53.993 INFO - Executing: [send keys: 11 [[ChromeDriver: chrome on ANY (734c5b1bd471186d65e85a1184fdefd8)] -> css selector: #credit-card], [4, 1, 1, 1,  , 1, 1, 1, 1,  , 1, 1, 1, 1,  , 1, 1, 1, 1]])
+12:42:54.052 INFO - Done: [send keys: 11 [[ChromeDriver: chrome on ANY (734c5b1bd471186d65e85a1184fdefd8)] -> css selector: #credit-card], [4, 1, 1, 1,  , 1, 1, 1, 1,  , 1, 1, 1, 1,  , 1, 1, 1, 1]]
+12:42:54.056 INFO - Executing: [find elements: By.cssSelector: #credit-card-expiry])
+12:42:54.071 INFO - Done: [find elements: By.cssSelector: #credit-card-expiry]
+12:42:54.074 INFO - Executing: [clear: 12 [[ChromeDriver: chrome on ANY (734c5b1bd471186d65e85a1184fdefd8)] -> css selector: #credit-card-expiry]])
+12:42:54.110 INFO - Done: [clear: 12 [[ChromeDriver: chrome on ANY (734c5b1bd471186d65e85a1184fdefd8)] -> css selector: #credit-card-expiry]]
+12:42:54.113 INFO - Executing: [find elements: By.cssSelector: #credit-card-expiry])
+12:42:54.122 INFO - Done: [find elements: By.cssSelector: #credit-card-expiry]
+12:42:54.125 INFO - Executing: [send keys: 12 [[ChromeDriver: chrome on ANY (734c5b1bd471186d65e85a1184fdefd8)] -> css selector: #credit-card-expiry], [0, 1, /, 2, 0]])
+12:42:54.168 INFO - Done: [send keys: 12 [[ChromeDriver: chrome on ANY (734c5b1bd471186d65e85a1184fdefd8)] -> css selector: #credit-card-expiry], [0, 1, /, 2, 0]]
+12:42:54.171 INFO - Executing: [find elements: By.cssSelector: #order-form])
+12:42:54.183 INFO - Done: [find elements: By.cssSelector: #order-form]
+12:42:54.687 INFO - Executing: [find elements: By.cssSelector: #order-form])
+12:42:54.698 INFO - Done: [find elements: By.cssSelector: #order-form]
+12:42:55.202 INFO - Executing: [find elements: By.cssSelector: #order-form])
+12:42:55.213 INFO - Done: [find elements: By.cssSelector: #order-form]
+12:42:55.717 INFO - Executing: [find elements: By.cssSelector: #order-form])
+12:42:55.726 INFO - Done: [find elements: By.cssSelector: #order-form]
+12:42:56.231 INFO - Executing: [find elements: By.cssSelector: #order-form])
+12:42:56.244 INFO - Done: [find elements: By.cssSelector: #order-form]
+12:42:56.749 INFO - Executing: [find elements: By.cssSelector: #order-form])
+12:42:56.766 INFO - Done: [find elements: By.cssSelector: #order-form]
+12:42:57.270 INFO - Executing: [find elements: By.cssSelector: #order-form])
+12:42:57.282 INFO - Done: [find elements: By.cssSelector: #order-form]
+12:42:57.786 INFO - Executing: [find elements: By.cssSelector: #order-form])
+12:42:57.795 INFO - Done: [find elements: By.cssSelector: #order-form]
+12:42:58.299 INFO - Executing: [find elements: By.cssSelector: #order-form])
+12:42:58.310 INFO - Done: [find elements: By.cssSelector: #order-form]
+12:42:58.814 INFO - Executing: [find elements: By.cssSelector: #order-form])
+12:42:58.824 INFO - Done: [find elements: By.cssSelector: #order-form]
+12:42:59.328 INFO - Executing: [find elements: By.cssSelector: #order-form])
+12:42:59.340 INFO - Done: [find elements: By.cssSelector: #order-form]
+12:42:59.499 INFO - Executing: [get current url])
+12:42:59.507 INFO - Done: [get current url]
+12:43:00.012 INFO - Executing: [get current url])
+12:43:00.018 INFO - Done: [get current url]
+12:43:00.528 INFO - Executing: [get current url])
+12:43:00.539 INFO - Done: [get current url]
+12:43:01.044 INFO - Executing: [get current url])
+12:43:01.051 INFO - Done: [get current url]
+12:43:01.560 INFO - Executing: [get current url])
+12:43:01.571 INFO - Done: [get current url]
+12:43:02.077 INFO - Executing: [get current url])
+12:43:02.096 INFO - Done: [get current url]
+12:43:02.603 INFO - Executing: [get current url])
+12:43:02.615 INFO - Done: [get current url]
+12:43:03.124 INFO - Executing: [get current url])
+12:43:03.138 INFO - Done: [get current url]
+12:43:03.643 INFO - Executing: [get current url])
+12:43:03.652 INFO - Done: [get current url]
+12:43:04.156 INFO - Executing: [get current url])
+12:43:04.162 INFO - Done: [get current url]
+12:43:04.667 INFO - Executing: [get current url])
+12:43:04.674 INFO - Done: [get current url]
+12:43:04.698 INFO - Executing: [delete session: b90fccc9-4b47-4b17-93ea-75f71238818a])
+12:43:05.520 INFO - Done: [delete session: b90fccc9-4b47-4b17-93ea-75f71238818a]

@@ -1,3 +1,5 @@
+/* global sessionStorage, $, document, window, dialog */
+
 // Header
 updateShoppingCartView();
 
@@ -18,12 +20,12 @@ function updateShoppingCartView() {
 let products = {category: "all", sort: "lowestHighest", productList: []};
 let fullProductList = [];
 
-$.get("/data/products.json", function(data) {
+$.get("http://localhost:8000/data/products.json", function(data) {
     fullProductList = data;
     products = {category: "all", sort: "lowestHighest", productList: fullProductList.sort((a, b) => { return a.price - b.price; })};
     recreateProductList();
     populateProductPage();
-});
+}, "json");
 
 function filterView(category) {
     products.category = category;
@@ -93,7 +95,7 @@ function recreateProductList() {
             productImg.setAttribute("src", "./assets/img/".concat(product.image));
             const productPrice = document.createElement("p");
             productPrice.setAttribute("class", "price");
-            productPrice.innerHTML = "<small>Prix</small> ".concat(product.price).concat("&thinsp;$");
+            productPrice.innerHTML = "<small>Prix</small> ".concat(product.price).concat("&thinsp;$").replace(/\./, ",");
 
             productLink.appendChild(productHeader);
             productLink.appendChild(productImg);
@@ -125,7 +127,7 @@ function populateProductPage() {
             $("#product-image").attr("src", "./assets/img/".concat(selectedProduct.image));
             $("#product-name").html(selectedProduct.name);
             $("#product-desc").html(selectedProduct.description);
-            $("#product-price").html("Prix: <strong>".concat(selectedProduct.price).concat("&thinsp;$</strong>"));
+            $("#product-price").html("Prix: <strong>".concat(selectedProduct.price).concat("&thinsp;$</strong>").replace(/\./, ","));
             const featureList = $("#product-features");
             Array.from(selectedProduct.features).forEach((feature) => {
                 const newFeature = document.createElement("li");
@@ -146,7 +148,7 @@ if (addToCartForm != undefined) {
     addToCartForm.addEventListener("submit", function(event) {
         event.preventDefault();
         const quantity = $("#product-quantity").val();
-        let cartList = JSON.parse(sessionStorage.getItem("shoppingCartItems"));
+        const cartList = JSON.parse(sessionStorage.getItem("shoppingCartItems"));
         const selectedProduct = fullProductList.find((product) => { return product.id == productId; });
         if (selectedProduct != undefined) {
             for (let i = 0; i < quantity; i++) {

@@ -58,7 +58,7 @@ function validateShoppingCartTable(client, productsList) {
             // Check if the quantity is valid.
             client.elementIdElement(v.ELEMENT, "css selector", config.elements.quantity, function(result) {
                 client.elementIdText(result.value.ELEMENT, function(result) {
-                    assert.strictEqual(result.value, product.quantity, `La quantité pour le produit '${product.name
+                    assert.strictEqual(+result.value, product.quantity, `La quantité pour le produit '${product.name
                     }' doit être '${product.quantity}'.`);
                 });
             });
