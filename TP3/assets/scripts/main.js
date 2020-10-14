@@ -1,3 +1,4 @@
+/* eslint-disable max-lines */
 /* global sessionStorage, $, document, window, confirm */
 
 // Header
@@ -317,3 +318,4 @@ function minusItem(productId) {
     updateShoppingCartView();
     populateShoppingCartPage();
 }
+
