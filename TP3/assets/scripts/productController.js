@@ -1,6 +1,6 @@
-/* global $, document, sessionStorage */
+/* global $, document, sessionStorage, window */
 import getProducts from "./productsService.js";
-import updateShoppingCartView from "./main.js";
+import updateShoppingCartView from "./headerController.js";
 
 let fullProductList = [];
 
@@ -9,7 +9,6 @@ getProducts().then((data) => {
     populateProductPage();
 });
 
-// Product
 const urlParam = function(name) {
     const results = new RegExp("[?&]".concat(name).concat("=([^&#]*)")).exec(window.location.href);
     if (results === null) {
@@ -59,7 +58,7 @@ if (addToCartForm != undefined) {
             }
         }
         sessionStorage.setItem("shoppingCartItems", JSON.stringify(cartList));
-        dialog.innerHTML = "Le produit a été ajouté au panier.";
+        $("#dialog").html("Le produit a été ajouté au panier.");
         updateShoppingCartView();
         $("#dialog").show();
         setTimeout(function() {

@@ -1,5 +1,5 @@
-/* global $, document, sessionStorage */
-import updateShoppingCartView from "./main.js";
+/* global $, document, sessionStorage, confirm */
+import updateShoppingCartView from "./headerController.js";
 
 addOnClicEvent();
 

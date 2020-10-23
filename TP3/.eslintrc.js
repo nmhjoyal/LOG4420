@@ -77,7 +77,6 @@ module.exports = {
             "WithStatement", //with
             "ForOfStatement", //remove for loop.
             "ForInStatement", //remove for in, for of -> use Array.forEach
-            "ForStatement",
             "SwitchStatement", //remove switch -> use object/Map instead.
             "SwitchCase",
             "ClassDeclaration[id.name!=/^.*Error$/]", //remove class expect Error class

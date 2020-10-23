@@ -1,7 +1,5 @@
 /* global sessionStorage, $ */
 
-
-// Header
 updateShoppingCartView();
 
 export default function updateShoppingCartView() {
