@@ -10,6 +10,7 @@ getProducts().then((data) => {
     recreateProductList();
 });
 
+// Add event listener to each filter/sort button
 addOnClicEvent();
 
 function addOnClicEvent() {
@@ -21,6 +22,7 @@ function addOnClicEvent() {
     });
 }
 
+// Updates filter button group
 function filterView() {
     products.category = this.id;
     sortAndFilterProducts();
@@ -30,6 +32,7 @@ function filterView() {
     this.classList.add("selected");
 }
 
+// Updates sort button group
 function sortView() {
     products.sort = this.id;
     sortAndFilterProducts();
@@ -37,9 +40,9 @@ function sortView() {
         child.removeAttribute("class");
     });
     this.classList.add("selected");
-
 }
 
+// Filters full list of products then sorts based on selected buttons
 function sortAndFilterProducts() {
     if (products.category != "all") {
         products.productList = fullProductList.filter((product) => product.category == products.category);
@@ -72,6 +75,7 @@ function sortAndFilterProducts() {
     recreateProductList();
 }
 
+// Empties and repopulates list of products based on current state (filter/sort)
 function recreateProductList() {
     const productListDiv = $("#products-list");
     if (productListDiv != undefined) {

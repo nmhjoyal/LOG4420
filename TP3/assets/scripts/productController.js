@@ -9,6 +9,7 @@ getProducts().then((data) => {
     populateProductPage();
 });
 
+// Retrieve url parameters
 const urlParam = function(name) {
     const results = new RegExp("[?&]".concat(name).concat("=([^&#]*)")).exec(window.location.href);
     if (results === null) {
@@ -17,10 +18,10 @@ const urlParam = function(name) {
         return results[1] || 0;
     }
 };
-// const queryString = window.location.search;
-// const urlParams = new URLSearchParams(queryString);
+
 const productId = urlParam("id");
 
+// Add HTML elements based on product id
 function populateProductPage() {
     if (productId != undefined) {
         const selectedProduct = fullProductList.find((product) => { return product.id == productId; });
@@ -37,6 +38,7 @@ function populateProductPage() {
                 featureList.append(newFeature);
             });
         } else {
+            // Invalid product id
             $("main").html("");
             const errorText = document.createElement("h1");
             errorText.innerHTML = "Page non trouvée!";
@@ -45,6 +47,7 @@ function populateProductPage() {
     }
 }
 
+// Add the quantity of product to session storage cart
 const addToCartForm = document.getElementById("add-to-cart-form");
 if (addToCartForm != undefined) {
     addToCartForm.addEventListener("submit", function(event) {
@@ -58,6 +61,8 @@ if (addToCartForm != undefined) {
             }
         }
         sessionStorage.setItem("shoppingCartItems", JSON.stringify(cartList));
+
+        // Product added to cart dialog
         $("#dialog").html("Le produit a été ajouté au panier.");
         updateShoppingCartView();
         $("#dialog").show();

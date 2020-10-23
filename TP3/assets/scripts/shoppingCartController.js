@@ -11,12 +11,15 @@ populateShoppingCartPage();
 
 function populateShoppingCartPage() {
     let shoppingCartList = JSON.parse(sessionStorage.getItem("shoppingCartItems"));
+
+    // Error page if shopping cart is empty
     if (shoppingCartList.length === 0) {
         $("#shopping-cart-page").html("");
         const errorText = document.createElement("p");
         errorText.innerHTML = "Aucun produit dans le panier.";
         $("#shopping-cart-page").append(errorText);
     } else {
+        // Sort in alphabetical order
         shoppingCartList = shoppingCartList.sort(function(a, b) {
             const nameA = a.name.toUpperCase();
             const nameB = b.name.toUpperCase();
@@ -46,10 +49,13 @@ function populateShoppingCartPage() {
         const shoppingCartListDiv = $("#shopping-cart-content");
         let price = 0;
         if (shoppingCartListDiv != undefined) {
+
+            // Empty cart list view, then append elements for each item
             shoppingCartListDiv.html("");
             shoppingCartWithCount.forEach(product => {
                 const newProduct = document.createElement("tr");
 
+                // Delete button
                 const col1 = document.createElement("td");
                 const deleteButton = document.createElement("button");
                 deleteButton.setAttribute("title", "Supprimer");
@@ -62,6 +68,7 @@ function populateShoppingCartPage() {
                 col1.appendChild(deleteButton);
                 newProduct.appendChild(col1);
 
+                // Product name
                 const col2 = document.createElement("td");
                 const productName = document.createElement("a");
                 productName.setAttribute("href", "./product.html?id=".concat(product.id));
@@ -69,10 +76,12 @@ function populateShoppingCartPage() {
                 col2.appendChild(productName);
                 newProduct.appendChild(col2);
 
+                // Product price
                 const col3 = document.createElement("td");
                 col3.innerHTML = "".concat(product.price).concat("&thinsp;$").replace(/\./, ",");
                 newProduct.appendChild(col3);
 
+                // Product quantity & minus button
                 const col4 = document.createElement("td");
                 const productQuantity = document.createElement("div");
                 productQuantity.setAttribute("class", "row");
@@ -83,6 +92,8 @@ function populateShoppingCartPage() {
                 minusButton.setAttribute("name", product.id);
                 minusButton.addEventListener("click", minusItem);
                 minusButton.setAttribute("class", "remove-quantity-button");
+
+                // Minus button disabled if quantity is 1
                 if(product.quantity == 1) {
                     minusButton.setAttribute("disabled", "");
                 }
@@ -97,6 +108,7 @@ function populateShoppingCartPage() {
                 quantityDiv.innerHTML = product.quantity;
                 productQuantity.appendChild(quantityDiv);
 
+                // Plus button
                 const plusDiv = document.createElement("div");
                 plusDiv.setAttribute("class", "col");
                 const plusButton = document.createElement("button");
@@ -126,6 +138,7 @@ function populateShoppingCartPage() {
     }
 }
 
+// Removes all items from session storage and resets view
 function emptyCart() {
     if(confirm("Voulezvous supprimer tous les produits du panier ?")) {
         sessionStorage.setItem("shoppingCartItems", JSON.stringify([]));
@@ -134,6 +147,7 @@ function emptyCart() {
     }
 }
 
+// Removed item from session storage and updates view
 function removeItem() {
     const productId = this.name;
     if(confirm("Voulez-vous supprimer le produit du panier ?")) {
@@ -145,6 +159,7 @@ function removeItem() {
     }
 }
 
+// Increments quantity of item (session storage update) and updates view
 function plusItem() {
     const productId = this.name;
     const cartList = JSON.parse(sessionStorage.getItem("shoppingCartItems"));
@@ -155,6 +170,7 @@ function plusItem() {
     populateShoppingCartPage();
 }
 
+// Decrements quantity of item (session storage update) and updates view
 function minusItem() {
     const productId = this.name;
     const cartList = JSON.parse(sessionStorage.getItem("shoppingCartItems"));

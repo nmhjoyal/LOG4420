@@ -2,6 +2,7 @@
 
 updateShoppingCartView();
 
+// Updates the shopping cart based on session storage cart items
 export default function updateShoppingCartView() {
     if (sessionStorage.getItem("shoppingCartItems") === null) {
         sessionStorage.setItem("shoppingCartItems", JSON.stringify([]));
