@@ -7,35 +7,11 @@
   <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
 </head>
 <body>
-  <header>
-    <div class="header-container">
-      <div class="logo">
-        <a href="./index.html">
-          <img alt="logo" src="./assets/img/logo.svg" title="Accueil">
-        </a>
-      </div>
-      <nav>
-        <ul>
-          <li><a href="./index.html">Accueil</a></li>
-          <li><a href="./products.html">Produits</a></li>
-          <li><a href="./contact.html">Contact</a></li>
-          <li>
-            <a class="shopping-cart" href="./shopping-cart.html" title="Panier">
-              <span class="fa-stack fa-lg">
-                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
-                <i class="fa fa-shopping-cart fa-stack-1x"></i>
-              </span>
-              <span class="count">3</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <%- include('header'); -%>
   <main>
     <article>
       <h1>Commande</h1>
-      <form id="order-form" action="./confirmation.html" method="post">
+      <form id="order-form" action="/confirmation" method="post">
         <section>
           <h2>Contact</h2>
           <div class="row">
@@ -88,14 +64,15 @@
       </form>
     </article>
   </main>
-  <footer>
-    <p>Par Antoine Béland et Konstantinos Lambrou-Latreille</p>
-  </footer>
-
+  <%- include('footer'); -%>
+  <%- include('scripts'); -%>
+  <script type="javascript/text" src=" /assets/js/jquery.validate.min.js"></script>
+  <script type="javascript/text" src="/assets/js/additional-methods.min.js"></script>
+  <script type="javascript/text" src="/assets/js/messages_fr.js"></script>
+  <script type="module" src="/assets/scripts/orders.service.js"></script>
+  <script type="module" src="/assets/scripts/order.controller.js"></script>
   <script type="module">
-    import { initShoppingCartController } from "./assets/scripts/shopping-cart.controller.js";
     import { initOrderController } from "./assets/scripts/order.controller.js"
-    initShoppingCartController();
     initOrderController();
   </script>
 </body>
