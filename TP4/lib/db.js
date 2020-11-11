@@ -26,9 +26,8 @@ const Product = new Schema({
 mongoose.model("Order", Order);
 mongoose.model("Product", Product);
 
-//mongoose.Promise = global.Promise;
+mongoose.Promise = global.Promise;
 
 mongoose.connect("mongodb+srv://admin209:admin209@cluster0.3rzg1.mongodb.net/LOG4420-TP4?retryWrites=true&w=majority");
 
-module.exports = mongoose;
 

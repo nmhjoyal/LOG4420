@@ -1,4 +1,4 @@
-import { validator } from "./validator";
+import { validator } from "./validator.js";
 
 Object.assign(validator.messages, {
     required: "Ce champ est obligatoire.",

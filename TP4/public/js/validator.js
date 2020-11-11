@@ -41,5 +41,5 @@ export function isFormValid(jqueryForm) {
  */
 export function getValidateForm(jqueryForm) {
     // @ts-ignore
-    return jqueryForm.validate
+    return jqueryForm.validate.bind(jqueryForm)
 }

@@ -45,18 +45,6 @@ function _createProductElement(product) {
         <p class="price"><small>Prix</small> ${formatPrice(product.price)}</p>
         </a>
         </div>`);
-    }
-    
-/**
- * Get all products and update the view.
- *
- * @param {object} filters     category and sortingCriteria
- * @private
- */
-function _updateProducts(filters) {
-    getAllProducts(filters.sortingCriteria, filters.category).then(products => 
-        _updateView(products, filters.category, filters.sortingCriteria)
-    );
 }
 
 
@@ -66,14 +54,17 @@ export function initProductController() {
         category: "all",
         sortingCriteria: "price-asc"
     };
-    _updateProducts(filters);
     $("#product-categories").children().on("click", e => {
         filters.category = $(e.target).attr("data-category");
-        _updateProducts(filters);
+        getAllProducts(filters.sortingCriteria, filters.category).then(products => 
+            _updateView(products, filters.category, filters.sortingCriteria)
+        );
     });
     $("#product-criteria").children().on("click", e => {
         filters.sortingCriteria = $(e.target).attr("data-criteria");
-        _updateProducts(filters);
+        getAllProducts(filters.sortingCriteria, filters.category).then(products => 
+            _updateView(products, filters.category, filters.sortingCriteria)
+        );
     });
 }
 
