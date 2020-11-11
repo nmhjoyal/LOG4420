@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>OnlineShop - Commande</title>
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
 </head>
 <body>
   <%- include('header'); -%>
@@ -66,13 +66,13 @@
   </main>
   <%- include('footer'); -%>
   <%- include('scripts'); -%>
-  <script type="javascript/text" src=" /assets/js/jquery.validate.min.js"></script>
+  <script type="javascript/text" src="/assets/js/jquery.validate.min.js"></script>
   <script type="javascript/text" src="/assets/js/additional-methods.min.js"></script>
   <script type="javascript/text" src="/assets/js/messages_fr.js"></script>
   <script type="module" src="/assets/scripts/orders.service.js"></script>
   <script type="module" src="/assets/scripts/order.controller.js"></script>
   <script type="module">
-    import { initOrderController } from "./assets/scripts/order.controller.js"
+    import { initOrderController } from "/assets/scripts/order.controller.js"
     initOrderController();
   </script>
 </body>

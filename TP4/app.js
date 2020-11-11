@@ -8,6 +8,7 @@ const session = require("express-session");
 
 require("./lib/db");
 const index = require("./routes/index");
+const products = require("./routes/products.api");
 
 const app = express();
 
@@ -34,7 +35,9 @@ app.use(session({
     cookie: {secure: false}
 }));
 
+app.use("/", products)
 app.use("/", index);
+
 
 /**
  * @typedef {Error & {status?: number}} ErrWithStatus

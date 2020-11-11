@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>OnlineShop - Panier</title>
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
 </head>
 <body>
   <%- include('header'); -%>
@@ -26,7 +26,7 @@
           </tbody>
         </table>
         <p class="shopping-cart-total">Total: <strong id="total-amount"></strong></p>
-        <a class="btn pull-right" href="./commande">Commander <i class="fa fa-angle-double-right"></i></a>
+        <a class="btn pull-right" href="/commande">Commander <i class="fa fa-angle-double-right"></i></a>
         <button class="btn" id="remove-all-items-button"><i class="fa fa-trash-o"></i>&nbsp; Vider le panier</button>
       </div>
     </article>
@@ -34,7 +34,7 @@
   <%- include('footer'); -%>
   <%- include('scripts'); -%>
   <script type="module">
-    import { initProductController } from "./assets/scripts/products.controller.js"
+    import { initProductController } from "/assets/scripts/products.controller.js"
     initProductController();
   </script>
 </body>
