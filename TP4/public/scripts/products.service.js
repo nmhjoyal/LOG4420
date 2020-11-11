@@ -14,7 +14,6 @@
  */
 export function getAllProducts(sortingCriteria, category) {
     const categoryPart = category && category !== "all" ? "&category=" + category : "";
-    console.log("ask for product");
     return fetch(`/api/products?criteria=${sortingCriteria}${categoryPart}`).then(
         res => res.json()
     );

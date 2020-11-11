@@ -14,4 +14,11 @@ router.get(`/api/products`, (req, res) => {
       });
 });
 
+router.get(`/api/products/:id`, (req, res) => {
+    mongoose.model('Product').find({id : req.params.id}, function (err, products) {
+        if (err) return console.error(err);
+        res.json(products);
+      });
+});
+
 module.exports = router;
