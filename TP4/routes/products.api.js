@@ -54,8 +54,7 @@ router.post(`/api/products/`, (req, res) => {
   if(!req.body.features) {
     return res.status(400).send("invalid features");
   }
-  else {
-    if (req.body.features.some(str => validator.isEmpty(str, {ignore_whitespace: true})))
+  else if (req.body.features.some(str => validator.isEmpty(str, {ignore_whitespace: true}))) {
       return res.status(400).send("invalid features");
   }
   
@@ -75,9 +74,9 @@ router.post(`/api/products/`, (req, res) => {
 });
 
 router.delete(`/api/products/:id`, (req, res) => {
-  Product.deleteOne({id : req.params.id}, function (err, products) {
+  Product.deleteOne({id : req.params.id}, function (err, product) {
     if (err) return console.error(err);
-    if (products.n == 0) return res.status(404).send("product not found");
+    if (product.n == 0) return res.status(404).send("product not found");
     res.status(204).send("product deleted");
   });
 });

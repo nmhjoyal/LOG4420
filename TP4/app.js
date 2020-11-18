@@ -9,7 +9,8 @@ const session = require("express-session");
 require("./lib/db");
 const index = require("./routes/index");
 const products = require("./routes/products.api");
-const ShoppingCart = require("./routes/shopping-cart.api");
+const shoppingCart = require("./routes/shopping-cart.api");
+const orders = require("./routes/orders.api");
 
 const app = express();
 
@@ -36,9 +37,10 @@ app.use(session({
     cookie: {secure: false}
 }));
 
-app.use("/", products)
+app.use("/", products);
+app.use("/", shoppingCart);
+app.use("/", orders);
 app.use("/", index);
-app.use("/", ShoppingCart);
 
 
 /**
