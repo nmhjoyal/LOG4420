@@ -10,35 +10,43 @@
   <%- include('header'); -%>
   <main>
     <article>
-      <h1 id="product-name">Produit</h1>
-      <div class="row">
+      <% if (!isHidden) {%>
+        <h1 id="product-name"><%- product.name%></h1>
+        <div class="row">
         <div class="col">
-          <img alt="product" src="#" id="product-image">
+          <img alt="product" src="/assets/img/<%= product.image %>" id="product-image">
         </div>
         <div class="col">
           <section>
             <h2>Description</h2>
-            <p id="product-desc"></p>
+            <p id="product-desc"><%- product.description%></p>
           </section>
           <section>
             <h2>Caractéristiques</h2>
             <ul id="product-features">
+              <% product.features.forEach(function(feature) { %>
+                <li><%- feature %></li>
+              <% }); %>
             </ul>
           </section>
           <hr>
-          <form class="pull-right" id="add-to-cart-form"  data-product-id=<%= id %>>
+          <form class="pull-right" id="add-to-cart-form"  data-product-id=<%- id %>>
             <label for="product-quantity">Quantité:</label>
             <input class="form-control" type="number" value="1" min="1" id="product-quantity">
             <button class="btn" title="Ajouter au panier" type="submit">
               <i class="fa fa-cart-plus"></i>&nbsp; Ajouter
             </button>
           </form>
-          <p>Prix: <strong id="product-price"></strong></p>
+          <p>Prix: <strong id="product-price"></strong><%-product.price%></p>
         </div>
       </div>
       <div class="dialog" id="dialog">
         Le produit a été ajouté au panier.
       </div>
+      <%} else {%>
+        <h1 id="product-name">Product not found</h1>
+        <div class="row"  hidden>
+      <% } %>
     </article>
   </main>
   <%- include('footer'); -%>
