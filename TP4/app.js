@@ -37,9 +37,9 @@ app.use(session({
     cookie: {secure: false}
 }));
 
-app.use("/", products);
-app.use("/", shoppingCart);
-app.use("/", orders);
+app.use("/api/products", products);
+app.use("/api/shopping-cart", shoppingCart);
+app.use("/api/orders", orders);
 app.use("/", index);
 
 

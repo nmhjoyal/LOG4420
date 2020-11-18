@@ -4,12 +4,12 @@ const router = express.Router();
 const session = require("express-session");
 const Product = require("mongoose").model("Product");
 
-router.get(`/api/shopping-cart`, (req, res) => {
+router.get(`/`, (req, res) => {
   if(!req.session.cart) {req.session.cart = [];}
   res.json(req.session.cart);
 });
 
-router.get(`/api/shopping-cart/:productId`, (req, res) => {
+router.get(`/:productId`, (req, res) => {
   if(!req.session.cart) {req.session.cart = [];}
   var cart = req.session.cart;
   const product = (cart.find(product => product.productId == req.params.productId))
@@ -17,7 +17,7 @@ router.get(`/api/shopping-cart/:productId`, (req, res) => {
   res.json(product);
 });
 
-router.post(`/api/shopping-cart`, (req, res) => {
+router.post(`/`, (req, res) => {
   if(!req.body.productId || !validator.isInt(req.body.productId.toString(), {min: 0})) {
     return res.status(400).send("invalid id");
   }
@@ -42,7 +42,7 @@ router.post(`/api/shopping-cart`, (req, res) => {
   });
 });
 
-router.put(`/api/shopping-cart/:productId`, (req, res) => {
+router.put(`/:productId`, (req, res) => {
   if(!req.body.quantity || !validator.isInt(req.body.quantity.toString(), {min: 0})) {
     return res.status(400).send("invalid quantity");
   }
@@ -59,7 +59,7 @@ router.put(`/api/shopping-cart/:productId`, (req, res) => {
   }
 });
 
-router.delete(`/api/shopping-cart/:productId`, (req, res) => {
+router.delete(`/:productId`, (req, res) => {
   if(!req.session.cart) {req.session.cart = [];}
   var cart = req.session.cart;
   const productIndex = cart.findIndex(product => product.productId == req.params.productId);
@@ -73,7 +73,7 @@ router.delete(`/api/shopping-cart/:productId`, (req, res) => {
   }
 });
 
-router.delete(`/api/shopping-cart`, (req, res) => {
+router.delete(`/`, (req, res) => {
   req.session.cart = [];
   res.status(204).send("products deleted");
 });

@@ -3,7 +3,7 @@ const express = require("express");
 const router = express.Router();
 const Product = require("mongoose").model("Product");
 
-router.get(`/api/products`, (req, res) => {
+router.get(`/`, (req, res) => {
   let sortCondition = "price";
   if(req.query.criteria) {
     if(!validator.isIn(req.query.criteria.toString(), ["price-asc", "price-dsc", "alpha-asc", "alpha-dsc"])) {
@@ -24,7 +24,7 @@ router.get(`/api/products`, (req, res) => {
   });
 });
 
-router.get(`/api/products/:id`, (req, res) => {
+router.get(`/:id`, (req, res) => {
   Product.findOne({id : req.params.id}, function (err, product) {
     if(err) return console.error(err);
     if(product == null) { return res.status(404).send("product not found"); }
@@ -32,7 +32,7 @@ router.get(`/api/products/:id`, (req, res) => {
   });
 });
 
-router.post(`/api/products/`, (req, res) => {
+router.post(`/`, (req, res) => {
   if(!req.body.id || !validator.isInt(req.body.id.toString(), {min: 0})) {
     return res.status(400).send("invalid id");
   }
@@ -73,7 +73,7 @@ router.post(`/api/products/`, (req, res) => {
   });
 });
 
-router.delete(`/api/products/:id`, (req, res) => {
+router.delete(`/:id`, (req, res) => {
   Product.deleteOne({id : req.params.id}, function (err, product) {
     if (err) return console.error(err);
     if (product.n == 0) return res.status(404).send("product not found");
@@ -81,7 +81,7 @@ router.delete(`/api/products/:id`, (req, res) => {
   });
 });
 
-router.delete(`/api/products`, (req, res) => {
+router.delete(`/`, (req, res) => {
   Product.deleteMany({}, function (err) {
     if (err) return console.error(err);
     res.status(204).send("products deleted");

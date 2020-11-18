@@ -4,14 +4,14 @@ const router = express.Router();
 const Order = require("mongoose").model("Order");
 const Product = require("mongoose").model("Product");
 
-router.get(`/api/orders`, (req, res) => {
+router.get(`/`, (req, res) => {
   Order.find(function (err, orders) {
     if (err) return console.error(err);
     res.json(orders);
   });
 });
 
-router.get(`/api/orders/:id`, (req, res) => {
+router.get(`/:id`, (req, res) => {
   Order.findOne({id : req.params.id}, function (err, order) {
     if(err) return console.error(err);
     if(order == null) { return res.status(404).send("order not found"); }
@@ -19,7 +19,7 @@ router.get(`/api/orders/:id`, (req, res) => {
   });
 });
 
-router.post(`/api/orders/`, async (req, res) => {
+router.post(`/`, async (req, res) => {
   if(!req.body.id || !validator.isInt(req.body.id.toString(), {min: 0})) {
     return res.status(400).send("invalid id");
   }
@@ -61,7 +61,7 @@ router.post(`/api/orders/`, async (req, res) => {
   });
 });
 
-router.delete(`/api/orders/:id`, (req, res) => {
+router.delete(`/:id`, (req, res) => {
   Order.deleteOne({id : req.params.id}, function (err, order) {
     if (err) return console.error(err);
     if (order.n == 0) return res.status(404).send("order not found");
@@ -69,7 +69,7 @@ router.delete(`/api/orders/:id`, (req, res) => {
   });
 });
 
-router.delete(`/api/orders`, (req, res) => {
+router.delete(`/`, (req, res) => {
   Order.deleteMany({}, function (err) {
     if (err) return console.error(err);
     res.status(204).send("orders deleted");
