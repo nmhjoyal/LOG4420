@@ -54,9 +54,6 @@ export function initProductController() {
         category: "all",
         sortingCriteria: "price-asc"
     };
-    getAllProducts(filters.sortingCriteria, filters.category).then(products => 
-        _updateView(products, filters.category, filters.sortingCriteria)
-    );
     $("#product-categories").children().on("click", e => {
         filters.category = $(e.target).attr("data-category");
         getAllProducts(filters.sortingCriteria, filters.category).then(products => 

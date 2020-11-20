@@ -12,14 +12,17 @@ router.get("/accueil", (req, res) => {
 });
 
 router.get("/produits", (req, res) => {
-    res.render("pages/products", {activeTab: "products"});
+    Product.find().collation({ locale: "en" }).sort("price").exec(function (err, products) {
+        if (err) return console.error(err);
+        res.render("pages/products", {activeTab: "products", products: products, formatPrice: formatPrice});
+      });
 });
 
 router.get("/produits/:id", (req, res) => {
     Product.findOne({id : req.params.id}, function (err, product) {
         if(err) return console.error(err);
         if(product == null) {
-            res.render("pages/product", {product: product, id: req.params.id, isHidden: true, activeTab: "products"});
+            res.render("pages/product", {isHidden: true, activeTab: "products"});
         }
         res.render("pages/product", {product: product, id: req.params.id, isHidden: false, activeTab: "products"});
       });
@@ -43,3 +46,7 @@ router.get("/confirmation", (req, res) => {
 });
 
 module.exports = router;
+
+function formatPrice(price) {
+    return price.toFixed(2).replace(".", ",") + "&thinsp;$";
+}
