@@ -15,6 +15,7 @@ import { getAllProducts } from "./products.service.js";
  */
 export const addItem = (productId, quantity) => {
     return _getItemsFromAPI().then(items => {
+        cache = undefined;
         const itemFound = items.find(item => item.productId === productId);
         if (!itemFound) {
             return fetch("/api/shopping-cart", {

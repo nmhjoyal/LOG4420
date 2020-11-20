@@ -48,9 +48,6 @@ export function initShoppingCartController() {
             +$(e.target).find("input").val()
         ).then((res) => {
             const dialog = $("#dialog");
-            if (res.status != 201) {
-                dialog.html(res.statusText);
-            }
             dialog.fadeIn();
             setTimeout(() => dialog.fadeOut(), 5000);
 
