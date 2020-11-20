@@ -43,9 +43,9 @@ router.get("/commande", (req, res) => {
 
 router.get("/confirmation", (req, res) => {
     const name = req.query["first-name"] + " " + req.query["last-name"];
-    Order.findOne().sort("-id").exec(function (err, order) {
-        if (err) return console.error(err);
-        res.render("pages/confirmation", {activeTab: "confirmation", name: name, id: order.id});
+    Order.find().sort("-id").limit(1).exec(function (err, orders) {
+        if (err || orders.length == 0) return console.error(err);
+        res.render("pages/confirmation", {activeTab: "confirmation", name: name, id: orders[0].id});
       });
     
 });

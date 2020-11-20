@@ -34,6 +34,6 @@ export function createOrder(order) {
             body: JSON.stringify(order)
         });
     }).then(res => {
-        return res.json();
+        return res;
     });
 }

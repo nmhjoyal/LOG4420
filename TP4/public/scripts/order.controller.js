@@ -39,7 +39,7 @@ function _createOrder(event) {
     return order;
     
   }).then(order => {
-      createOrder(order)
+      return createOrder(order);
   }).then(
       removeAllItems
   ).then(() => 
