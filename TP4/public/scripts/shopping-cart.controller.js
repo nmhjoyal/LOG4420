@@ -38,14 +38,19 @@ function _renderEmptyView() {
 
 export function initShoppingCartController() {
 // Initializes the "add to cart" form.
+    _updateCount();
+    _updateTotalAmount();
     $("#add-to-cart-form").on("submit", e => {
         e.preventDefault();
         const productId = +$(e.target).attr("data-product-id");
         addItem(
             productId,
             +$(e.target).find("input").val()
-        ).then(() => {
+        ).then((res) => {
             const dialog = $("#dialog");
+            if (res.status != 201) {
+                dialog.html(res.statusText);
+            }
             dialog.fadeIn();
             setTimeout(() => dialog.fadeOut(), 5000);
 

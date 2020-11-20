@@ -7,9 +7,21 @@
       </div>
       <nav>
         <ul>
-          <li class="active"><a href="/accueil">Accueil</a></li>
-          <li><a href="/produits">Produits</a></li>
-          <li><a href="/contact">Contact</a></li>
+          <% if (activeTab === "home") { %>
+            <li class="active"><a href="/accueil">Accueil</a></li>
+          <% } else {%>
+            <li><a href="/accueil">Accueil</a></li>
+          <% } %>
+          <% if (activeTab === "products") { %>
+            <li class="active"><a href="/produits">Produits</a></li>
+          <% } else {%>
+            <li><a href="/produits">Produits</a></li>
+          <% } %>
+          <% if (activeTab === "contact") { %>
+            <li class="active"><a href="/contact">Contact</a></li>
+          <% } else {%>
+            <li><a href="/contact">Contact</a></li>
+          <% } %>
           <li>
             <a class="shopping-cart" href="/panier" title="Panier">
               <span class="fa-stack fa-lg">

@@ -19,22 +19,28 @@ router.get(`/:productId`, (req, res) => {
 
 router.post(`/`, (req, res) => {
   if(!req.body.productId || !validator.isInt(req.body.productId.toString(), {min: 0})) {
-    return res.status(400).send("invalid id");
+    res.statusMessage = "Produit n'existe pas."
+    return res.status(400).end(); 
   }
   if(!req.body.quantity || !validator.isInt(req.body.quantity.toString(), {min: 0})) {
-    return res.status(400).send("invalid quantity");
+    res.statusMessage = "Quantité invalide."
+    return res.status(400).end(); 
   }
-  Product.exists({id : req.body.productId}, function (err, result) {
+  Product.findOne({id : req.body.productId}, function (err, result) {
     if(err) return console.error(err);
-    if(!result) { return res.status(400).send("product id does not exist"); }
+    if(!result) { 
+      res.statusMessage = "Produit n'existe pas."
+      return res.status(400).end(); 
+    }
     else {
       if(!req.session.cart) {req.session.cart = [];}
       var cart = req.session.cart;
       if (cart.some(product => product.productId == req.body.productId)) { 
-        return res.status(400).send("product already in cart"); 
+        res.statusMessage = "Produit déjà ajouté."
+        return res.status(400).end(); 
       }
       else {
-        cart.push({ "productId": req.body.productId, "quantity": req.body.quantity });
+        cart.push({productId: req.body.productId, product: result, quantity: req.body.quantity});
         req.session.cart = cart;
         res.status(201).send("product added");
       }
