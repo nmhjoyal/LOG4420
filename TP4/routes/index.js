@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const Product = require("mongoose").model("Product");
-const productAPI = require("./products.api");
+const Order = require("mongoose").model("Order");
 
 router.get("/", (req, res) => {
     res.render("pages/index", {activeTab: "home"});
@@ -42,7 +42,12 @@ router.get("/commande", (req, res) => {
 });
 
 router.get("/confirmation", (req, res) => {
-    res.render("pages/confirmation", {activeTab: "confirmation"});
+    const name = req.query["first-name"] + " " + req.query["last-name"];
+    Order.findOne().sort("-id").exec(function (err, order) {
+        if (err) return console.error(err);
+        res.render("pages/confirmation", {activeTab: "confirmation", name: name, id: order.id});
+      });
+    
 });
 
 module.exports = router;
