@@ -50,18 +50,21 @@ router.post(`/`, (req, res) => {
 
 router.put(`/:productId`, (req, res) => {
   if(!req.body.quantity || !validator.isInt(req.body.quantity.toString(), {min: 0})) {
-    return res.status(400).send("invalid quantity");
+    res.statusMessage = "Quantité invalide."
+    return res.status(400).end();
   }
   if(!req.session.cart) {req.session.cart = [];}
   var cart = req.session.cart;
   const productIndex = cart.findIndex(product => product.productId == req.params.productId);
   if (productIndex == -1) { 
-    return res.status(404).send("product not in cart"); 
+    res.statusMessage = "Produit pas dans le panier."
+    return res.status(404).end(); 
   }
   else {
     cart[productIndex].quantity = req.body.quantity;
     req.session.cart = cart;
-    res.status(204).send("product modified");
+    res.statusMessage = "Produit modifié."
+    res.status(204).end();
   }
 });
 
