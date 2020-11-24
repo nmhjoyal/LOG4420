@@ -65,7 +65,7 @@ export function ProductsComponent() {
                     {categories.map(catObj => 
                         <button 
                             key={catObj.id}
-                            className={cat==catObj.id ? "active" : ""}
+                            className={cat===catObj.id ? "selected" : ""}
                             data-category={catObj.id}
                             onClick={() => setCat(catObj.id)}
                         >
@@ -80,7 +80,7 @@ export function ProductsComponent() {
                     {sorts.map(sortObj => 
                         <button 
                             key={sortObj.id}
-                            className={sort==sortObj.id ? "active" : ""}
+                            className={sort===sortObj.id ? "selected" : ""}
                             data-category={sortObj.id}
                             onClick={() => setSort(sortObj.id)}
                         >
