@@ -16,7 +16,7 @@ export function ProductsComponent() {
             try {
                 const prod = await fetch("http://localhost:4000/api/products");
                 if(prod.ok) {
-                    setProducts(prod.json());
+                    setProducts(await prod.json());
                 } else {
                     throw prod.json();
                 }
@@ -31,24 +31,13 @@ export function ProductsComponent() {
     const [ cat, setCat] = useState("all")
     const [ sort, setSort ] = useState("price-asc");
     const [ currentProductList, setCurrentProductList] = useState(products);
-
-    const changeCat = (newCat) => {
-        if(cat !== newCat) {
-            const newProductList = applyCategory(products, newCat);
-            applySortingCriteria(newProductList, sort);
-            setCat(newCat);
-            setCurrentProductList(newProductList)    
-        }
-    }
-
-    const changeSort = (newSort) => {
-        if(sort !== newSort) {
-            const newProductList = applyCategory(products, cat);
-            applySortingCriteria(newProductList, sort);
-            setSort(newSort);
-            setCurrentProductList(newProductList);
-        }
-    }
+    
+    useEffect(() => {
+        if (!products?.length) return;
+        const newProductList = applyCategory(products, cat);
+        applySortingCriteria(newProductList, sort);
+        setCurrentProductList(newProductList)
+    }, [products, cat, sort]);
 
     const categories = [
         {id: "cameras", text: "Appareils photo"},
@@ -66,7 +55,7 @@ export function ProductsComponent() {
     ]
 
     return (
-        <div className="PageNotFoundComponent">
+        <div>
             <Header currentActive="product"/>
             <main>
             <section className="sidebar" aria-label="Filtres">
@@ -78,7 +67,7 @@ export function ProductsComponent() {
                             key={catObj.id}
                             className={cat===catObj.id ? "active" : ""}
                             data-category={catObj.id}
-                            onClick={() => changeCat(catObj.id)}
+                            onClick={() => setCat(catObj.id)}
                         >
                             {catObj.text}
                         </button>
@@ -93,7 +82,7 @@ export function ProductsComponent() {
                             key={sortObj.id}
                             className={cat===sortObj.id ? "active" : ""}
                             data-category={sortObj.id}
-                            onClick={() => changeSort(sortObj.id)}
+                            onClick={() => setSort(sortObj.id)}
                         >
                             {sortObj.text}
                         </button>

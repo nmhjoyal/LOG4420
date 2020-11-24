@@ -18,7 +18,7 @@ export function ProductComponent() {
             try {
                 const prod = await fetch(`http://localhost:4000/api/products/${id}`);
                 if(prod.ok) {
-                    setProduct(prod.json());
+                    setProduct(await prod.json());
                 } else {
                     throw prod.json();
                 }
