@@ -12,6 +12,7 @@ export function ProductComponent() {
 
     const [product, setProduct] = useState();
     const [loading, setLoading] = useState(true);
+    const [quantity, setQuantity] = useState(1);
     
     useEffect(() => {
         const fetchData = async () => {
@@ -29,6 +30,27 @@ export function ProductComponent() {
         }
         fetchData();
     }, [id]);
+
+    function onChange(event) {
+        setQuantity(event.target.value);
+    }
+
+    async function submit(event) {
+        event.preventDefault();
+        let addProduct = { productId: parseInt(id), quantity: parseInt(quantity)};
+        const prod = await fetch("http://localhost:4000/api/shopping-cart", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(addProduct)
+        });
+        if(prod.ok) {
+            console.log("nope1");
+        } else {
+            console.log("nope2");
+        }
+    };
 
     let content;
     if(loading) {
@@ -61,8 +83,9 @@ export function ProductComponent() {
                         <hr/>
                         <form className="pull-right" id="add-to-cart-form">
                             <label htmlFor="product-quantity">Quantité:</label>
-                            <input className="form-control" type="number" defaultValue="1" min="1" id="product-quantity"/>
-                            <button className="btn" title="Ajouter au panier" type="submit">
+                            <input className="form-control" type="number" defaultValue="1" min="1" id="product-quantity"
+                                onChange={(event) => onChange(event)}/>
+                            <button className="btn" title="Ajouter au panier" type="submit" onClick={(event) => submit(event)}>
                                 <i className="fa fa-cart-plus"></i>&nbsp; Ajouter
                             </button>
                         </form>
