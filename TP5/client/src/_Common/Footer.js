@@ -2,7 +2,7 @@
 export function Footer() {
   return (
     <footer>
-        <p>Par Félix Brunet</p>
+        <p>Par Pascale Sylvestre - 1803609 et Nicole Joyal - 1794431</p>
     </footer>
   );
 }
