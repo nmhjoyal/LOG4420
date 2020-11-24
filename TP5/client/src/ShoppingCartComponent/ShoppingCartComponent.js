@@ -43,7 +43,7 @@ export function ShoppingCartComponent() {
                         </tbody>
                     </table>
                     <p className="shopping-cart-total">Total: <strong id="total-amount"></strong></p>
-                    <a className="btn pull-right" href="./order.html">Commander <i className="fa fa-angle-double-right"></i></a>
+                    <a className="btn pull-right" href="./commande">Commander <i className="fa fa-angle-double-right"></i></a>
                     <button className="btn" id="remove-all-items-button"><i className="fa fa-trash-o"></i>&nbsp; Vider le panier</button>
                 </div>
             </article>

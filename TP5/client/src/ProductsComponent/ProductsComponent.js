@@ -80,7 +80,7 @@ export function ProductsComponent() {
                     {sorts.map(sortObj => 
                         <button 
                             key={sortObj.id}
-                            className={cat===sortObj.id ? "active" : ""}
+                            className={sort===sortObj.id ? "active" : ""}
                             data-category={sortObj.id}
                             onClick={() => setSort(sortObj.id)}
                         >
