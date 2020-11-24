@@ -11,6 +11,7 @@ import tv from "../img/tv.png";
 import wii from "../img/wii.png";
 import xboxcontroller from "../img/xbox-controller.png";
 import xbox from "../img/xbox.png";
+import appletv from "../img/apple-tv.png";
 
 export const imageMap = {
     "camera-1.png" : camera1,
@@ -26,4 +27,5 @@ export const imageMap = {
     "wii.png" : wii,
     "xbox-controller.png" : xboxcontroller,
     "xbox.png" : xbox,
+    "apple-tv.png": appletv
 };

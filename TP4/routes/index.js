@@ -22,9 +22,9 @@ router.get("/produits/:id", (req, res) => {
     Product.findOne({id : req.params.id}, function (err, product) {
         if(err) return console.error(err);
         if(product == null) {
-            res.render("pages/product", {isHidden: true, activeTab: "products"});
+            res.render("pages/product", {isHidden: true, activeTab: "products", formatPrice: formatPrice});
         }
-        res.render("pages/product", {product: product, id: req.params.id, isHidden: false, activeTab: "products"});
+        res.render("pages/product", {product: product, id: req.params.id, isHidden: false, activeTab: "products", formatPrice: formatPrice});
       });
 });
 
@@ -34,7 +34,7 @@ router.get("/contact", (req, res) => {
 
 router.get("/panier", (req, res) => {
     if(!req.session.cart) {req.session.cart = [];}
-    res.render("pages/shopping-cart", {cart: req.session.cart, activeTab: "shopping-cart"});
+    res.render("pages/shopping-cart", {cart: req.session.cart, activeTab: "shopping-cart", formatPrice: formatPrice});
 });
 
 router.get("/commande", (req, res) => {

@@ -28,4 +28,4 @@ mongoose.model("Product", Product);
 mongoose.Promise = global.Promise;
 
 // TODO: Modifier le connect string par le votre!
-mongoose.connect("mongodb://...", { useMongoClient: true });
+mongoose.connect("mongodb+srv://admin209:admin209@cluster0.3rzg1.mongodb.net/LOG4420-TP4?retryWrites=true&w=majority", { useMongoClient: true });

@@ -30,7 +30,7 @@
                 <tr data-product-id=<%-item.productId%>>
                   <td><button class="remove-item-button"><i class="fa fa-times"></i></button></td>
                   <td><%- item.product.name %></td>
-                  <td><%- item.product.price %></td>
+                  <td><%- formatPrice(item.product.price) %></td>
                   <td>
                     <div class="row">
                       <div class="col">
@@ -42,7 +42,7 @@
                       </div>
                     </div>
                   </td>
-                  <td class="price"><%- item.product.price * item.quantity %> $</td>
+                  <td class="price"><%- formatPrice(item.product.price * item.quantity) %></td>
                 </tr>
               <%});%>
             </tbody>
