@@ -3,9 +3,28 @@ import {Header} from "../_Common/Header.js"
 import {Footer} from "../_Common/Footer.js"
 import {Link} from "react-router-dom"
 import { formatPrice } from "../utils.js"
+import { useEffect, useState } from 'react';
+
 export function ShoppingCartComponent() {
     document.title="OnlineShop - Panier";
-    const ordersItems = [];
+    const [ordersItems, setItems] = useState([]);
+    
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const item = await fetch("http://localhost:4000/api/shopping-cart", {withCredentials: true });
+                if(item.ok) {
+                    setItems(await item.json());
+                } else {
+                    throw item.json();
+                }
+            } catch(e) {
+                console.error(e);
+            }
+        }
+        fetchData();
+    }, []);
+
     return (
         <div>
             <Header/>
