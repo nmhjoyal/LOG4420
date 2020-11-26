@@ -12,7 +12,7 @@ export function ShoppingCartComponent() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const item = await fetch("http://localhost:4000/api/shopping-cart", {withCredentials: true });
+                const item = await fetch("http://localhost:4000/api/shopping-cart", {credentials: 'include' });
                 if(item.ok) {
                     setItems(await item.json());
                 } else {

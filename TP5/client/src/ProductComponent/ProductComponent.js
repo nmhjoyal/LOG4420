@@ -43,6 +43,7 @@ export function ProductComponent() {
             headers: {
                 "Content-Type": "application/json",
             },
+            credentials: 'include',
             body: JSON.stringify(addProduct)
         });
         if(prod.ok) {
