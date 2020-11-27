@@ -31,10 +31,6 @@ export function ProductComponent() {
         fetchData();
     }, [id]);
 
-    function onChange(event) {
-        setQuantity(event.target.value);
-    }
-
     async function submit(event) {
         event.preventDefault();
         let addProduct = { productId: parseInt(id), quantity: parseInt(quantity)};
@@ -85,7 +81,7 @@ export function ProductComponent() {
                         <form className="pull-right" id="add-to-cart-form">
                             <label htmlFor="product-quantity">Quantité:</label>
                             <input className="form-control" type="number" defaultValue="1" min="1" id="product-quantity"
-                                onChange={(event) => onChange(event)}/>
+                                onChange={(event) => setQuantity(event.target.value)}/>
                             <button className="btn" title="Ajouter au panier" type="submit" onClick={(event) => submit(event)}>
                                 <i className="fa fa-cart-plus"></i>&nbsp; Ajouter
                             </button>

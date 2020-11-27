@@ -13,8 +13,19 @@ export function ShoppingCartComponent() {
         const fetchData = async () => {
             try {
                 const item = await fetch("http://localhost:4000/api/shopping-cart", {credentials: 'include' });
-                if(item.ok) {
-                    setItems(await item.json());
+                const list = await fetch("http://localhost:4000/api/products", {credentials: 'include' });
+                if(item.ok && list.ok) {
+                    const orderItems = await item.json();
+                    const productsList = await list.json();
+                    let items = [];
+                    orderItems.forEach((orderItem) => {
+                        items.push(
+                            {
+                                product: productsList.find(item => parseInt(item.id) === parseInt(orderItem.productId)),
+                                quantity: orderItem.quantity
+                            });
+                    });
+                    setItems(items);
                 } else {
                     throw item.json();
                 }
@@ -24,6 +35,23 @@ export function ShoppingCartComponent() {
         }
         fetchData();
     }, []);
+
+    async function updateQuantity(item) {
+        const prod = await fetch(`http://localhost:4000/api/shopping-cart/${item.product.id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            credentials: 'include',
+            body: JSON.stringify({productId: item.product.id, quantity: item.quantity})
+        });
+        if(prod.ok) {
+            setItems(ordersItems);
+            console.log("ok");
+        } else {
+            console.log("nope2");
+        }
+    }
 
     return (
         <div>
@@ -46,17 +74,17 @@ export function ShoppingCartComponent() {
                         {ordersItems.map(item => 
                             <tr>
                                 <td><button className="remove-item-button" title="Supprimer"><i className="fa fa-times"></i></button></td>
-                                <td><Link href={`./product/${item.product.id}`}>{item.product.name}</Link></td>
-                                <td>{formatPrice(item.product["price"])}</td>
+                                <td><Link to={`./product/${item.product.id}`}>{item.product.name}</Link></td>
+                                <td>{formatPrice(item.product.price)}</td>
                                 <td>
                                     <div className="row">
-                                    <div className="col"><button className="remove-quantity-button" title="Retirer" disabled={item.quantity <= 1 ? "disabled" : ""}>
+                                    <div className="col"><button className="remove-quantity-button" title="Retirer" onClick={() => {item.quantity = item.quantity - 1; updateQuantity(item)}} disabled={item.quantity <= 1 ? "disabled" : ""}>
                                     <i className="fa fa-minus"></i></button></div>
                                     <div className="col quantity">{item.quantity}</div>
-                                    <div className="col"><button className="add-quantity-button" title="Ajouter"><i className="fa fa-plus"></i></button></div>
+                                    <div className="col"><button className="add-quantity-button" title="Ajouter" onClick={() => {item.quantity = item.quantity + 1; updateQuantity(item)}}><i className="fa fa-plus"></i></button></div>
                                     </div>
                                 </td>
-                                <td className="price">{formatPrice(item.total)}</td>
+                                <td className="price">{formatPrice(item.product.price * item.quantity)}</td>
                             </tr>
                         )}
                         </tbody>
