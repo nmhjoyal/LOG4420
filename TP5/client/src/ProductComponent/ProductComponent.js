@@ -4,6 +4,7 @@ import {Header} from "../_Common/Header.js"
 import {Footer} from "../_Common/Footer.js"
 import {useParams} from "react-router-dom";
 import {imageMap} from "../ProductsComponent/ProductImageLoader";
+import { formatPrice } from "../utils.js"
 import { useEffect, useState } from 'react';
 
 export function ProductComponent() {
@@ -86,7 +87,7 @@ export function ProductComponent() {
                                 <i className="fa fa-cart-plus"></i>&nbsp; Ajouter
                             </button>
                         </form>
-                        <p>Prix: <strong id="product-price">{product.price}</strong></p>
+                        <p>Prix: <strong id="product-price">{formatPrice(product.price)}</strong></p>
                     </div>
                 </div>
                 <div className="dialog" id="dialog">

@@ -8,6 +8,8 @@ import { useEffect, useState } from 'react';
 export function ShoppingCartComponent() {
     document.title="OnlineShop - Panier";
     const [ordersItems, setItems] = useState([]);
+    const [total, setTotal] = useState(0);
+    const [isEmpty, setIsEmpty] = useState(false);
     
     useEffect(() => {
         const fetchData = async () => {
@@ -15,17 +17,23 @@ export function ShoppingCartComponent() {
                 const item = await fetch("http://localhost:4000/api/shopping-cart", {credentials: 'include' });
                 const list = await fetch("http://localhost:4000/api/products", {credentials: 'include' });
                 if(item.ok && list.ok) {
+                    let calcTotal = 0.0;
                     const orderItems = await item.json();
                     const productsList = await list.json();
                     let items = [];
                     orderItems.forEach((orderItem) => {
-                        items.push(
-                            {
-                                product: productsList.find(item => parseInt(item.id) === parseInt(orderItem.productId)),
-                                quantity: orderItem.quantity
-                            });
+                        const cartItem = {
+                            product: productsList.find(item => parseInt(item.id) === parseInt(orderItem.productId)),
+                            quantity: orderItem.quantity
+                        };
+                        items.push(cartItem);
+                        calcTotal += cartItem.quantity * cartItem.product.price;
                     });
+                    if (items.length === 0) {
+                        setIsEmpty(true);
+                    }
                     setItems(items);
+                    setTotal(calcTotal);
                 } else {
                     throw item.json();
                 }
@@ -46,17 +54,55 @@ export function ShoppingCartComponent() {
             body: JSON.stringify({productId: item.product.id, quantity: item.quantity})
         });
         if(prod.ok) {
-            setItems(ordersItems);
-            console.log("ok");
+            const newList = [...ordersItems];
+            newList.find((selectedItem) => parseInt(selectedItem.product.id) === parseInt(item.product.id)).quantity = item.quantity;
+            setItems(newList);
+            updateTotal();
         } else {
             console.log("nope2");
         }
-    }
+    };
 
-    return (
-        <div>
-            <Header/>
-            <main>
+    async function removeItem(item) {
+        const prod = await fetch(`http://localhost:4000/api/shopping-cart/${item.product.id}`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            credentials: 'include'
+        });
+        if(prod.ok) {
+            const newItems = ordersItems.filter((orderitem) => orderitem !== item);
+            setItems(newItems);
+            if (newItems.length === 0) {
+                setIsEmpty(true);
+            }
+            updateTotal();
+        } else {
+            console.log("nope2");
+        }
+    };
+
+    function updateTotal() {
+        let calcTotal = 0.0;
+        ordersItems.forEach((orderItem) => {
+            calcTotal += orderItem.quantity * orderItem.product.price;
+        });
+        setTotal(calcTotal);
+    };
+
+    let content;
+    if (isEmpty) {
+        content = (
+            <article>
+                <h1>Panier</h1>
+                <div id="shopping-cart-container">
+                    <p>Aucun produit dans le panier.</p>
+                </div>
+            </article>
+        )
+    } else {
+        content = (
             <article>
                 <h1>Panier</h1>
                 <div id="shopping-cart-container">
@@ -72,8 +118,8 @@ export function ShoppingCartComponent() {
                         </thead>
                         <tbody>
                         {ordersItems.map(item => 
-                            <tr>
-                                <td><button className="remove-item-button" title="Supprimer"><i className="fa fa-times"></i></button></td>
+                            <tr key={item.product.id}>
+                                <td><button className="remove-item-button" title="Supprimer" onClick={() => removeItem(item)}><i className="fa fa-times"></i></button></td>
                                 <td><Link to={`./product/${item.product.id}`}>{item.product.name}</Link></td>
                                 <td>{formatPrice(item.product.price)}</td>
                                 <td>
@@ -89,12 +135,19 @@ export function ShoppingCartComponent() {
                         )}
                         </tbody>
                     </table>
-                    <p className="shopping-cart-total">Total: <strong id="total-amount"></strong></p>
+                    <p className="shopping-cart-total">Total: <strong id="total-amount">{formatPrice(total)}</strong></p>
                     <a className="btn pull-right" href="./commande">Commander <i className="fa fa-angle-double-right"></i></a>
                     <button className="btn" id="remove-all-items-button"><i className="fa fa-trash-o"></i>&nbsp; Vider le panier</button>
                 </div>
             </article>
-        </main>
+        );
+    }
+    return (
+        <div>
+            <Header/>
+            <main>
+                {content}
+            </main>
             <Footer/>
         </div>
     );
