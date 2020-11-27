@@ -64,22 +64,24 @@ export function ShoppingCartComponent() {
     };
 
     async function removeItem(item) {
-        const prod = await fetch(`http://localhost:4000/api/shopping-cart/${item.product.id}`, {
-            method: "DELETE",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            credentials: 'include'
-        });
-        if(prod.ok) {
-            const newItems = ordersItems.filter((orderitem) => orderitem !== item);
-            setItems(newItems);
-            if (newItems.length === 0) {
-                setIsEmpty(true);
+        if (window.confirm("Voulez-vous supprimer le produit du panier?")){
+            const prod = await fetch(`http://localhost:4000/api/shopping-cart/${item.product.id}`, {
+                method: "DELETE",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                credentials: 'include'
+            });
+            if(prod.ok) {
+                const newItems = ordersItems.filter((orderitem) => orderitem !== item);
+                setItems(newItems);
+                if (newItems.length === 0) {
+                    setIsEmpty(true);
+                }
+                updateTotal();
+            } else {
+                console.log("nope2");
             }
-            updateTotal();
-        } else {
-            console.log("nope2");
         }
     };
 
@@ -90,6 +92,21 @@ export function ShoppingCartComponent() {
         });
         setTotal(calcTotal);
     };
+
+    async function emptyCart() {
+        if (window.confirm("Voulez-vous supprimer tous les produits du panier?")) {
+            const prod = await fetch(`http://localhost:4000/api/shopping-cart`, {
+                method: "DELETE",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                credentials: 'include'
+            });
+            if (prod.ok) {
+                setIsEmpty(true);
+            }
+        }
+    }
 
     let content;
     if (isEmpty) {
@@ -137,7 +154,7 @@ export function ShoppingCartComponent() {
                     </table>
                     <p className="shopping-cart-total">Total: <strong id="total-amount">{formatPrice(total)}</strong></p>
                     <a className="btn pull-right" href="./commande">Commander <i className="fa fa-angle-double-right"></i></a>
-                    <button className="btn" id="remove-all-items-button"><i className="fa fa-trash-o"></i>&nbsp; Vider le panier</button>
+                    <button className="btn" id="remove-all-items-button" onClick={() => emptyCart()}><i className="fa fa-trash-o"></i>&nbsp; Vider le panier</button>
                 </div>
             </article>
         );
