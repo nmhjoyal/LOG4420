@@ -1,4 +1,3 @@
-
 import '../css/App.css';
 import {Header} from "../_Common/Header.js"
 import {Footer} from "../_Common/Footer.js"
@@ -14,7 +13,7 @@ export function ProductComponent() {
     const [product, setProduct] = useState();
     const [loading, setLoading] = useState(true);
     const [quantity, setQuantity] = useState(1);
-    const [hidden, setShowDialog] = useState("dialog");
+    const [dialogShowing, setShowDialog] = useState(false);
     const [cartItemsLength, setCartItems] = useState(0);
 
     useEffect(() => {
@@ -63,6 +62,8 @@ export function ProductComponent() {
             body: JSON.stringify(addProduct)
         });
         if(prod.ok) {
+            setShowDialog(true);
+            setTimeout(() => { setShowDialog(false)}, 5000);
             setCartItems(cartItemsLength + quantity);
         } else {
             const productGet = await fetch(`http://localhost:4000/api/shopping-cart/${id}`, {credentials: 'include'})
@@ -77,6 +78,8 @@ export function ProductComponent() {
                     body: JSON.stringify({quantity: parseInt(quantity) + parseInt(existingProduct.quantity)})
                 });
                 if (update.ok) {
+                    setShowDialog(true);
+                    setTimeout(() => { setShowDialog(false)}, 5000);
                     setCartItems(cartItemsLength + parseInt(quantity));
                 } 
             }
@@ -101,7 +104,7 @@ export function ProductComponent() {
                     <div className="col">
                         <section>
                             <h2>Description</h2>
-                            <p id="product-desc">{product.description}</p>
+                            <p id="product-desc" dangerouslySetInnerHTML={{__html: product.description}}></p>
                         </section>
                         <section>
                             <h2>Caractéristiques</h2>
@@ -123,7 +126,7 @@ export function ProductComponent() {
                         <p>Prix: <strong id="product-price">{formatPrice(product.price)}</strong></p>
                     </div>
                 </div>
-                <div className={hidden.toString()} id="dialog">
+                <div className={dialogShowing ? "dialog fadeIn" : "dialog fadeOut"} id="dialog">
                     Le produit a été ajouté au panier.
                 </div>
             </article>

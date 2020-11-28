@@ -86,13 +86,22 @@ a:hover {
   bottom: 30px;
   left: 50%;
   z-index: 10;
-  display: none;
   max-width: 400px;
   padding: 16px;
   color: #fff;
   background-color: #000;
   border-radius: 4px;
   transform: translateX(-50%);
+}
+.fadeOut{
+  opacity:0;
+  transition: width 0.5s 0.5s, height 0.5s 0.5s, opacity 0.5s;
+
+}
+.fadeIn{
+  opacity:1;
+  transition: width 0.5s, height 0.5s, opacity 0.5s 0.5s;
+
 }
 .form-control {
   padding: 9px;
