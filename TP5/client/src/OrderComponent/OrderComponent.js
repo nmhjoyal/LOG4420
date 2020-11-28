@@ -2,10 +2,12 @@
 import '../css/App.css';
 import {Header} from "../_Common/Header.js"
 import {Footer} from "../_Common/Footer.js"
+import { calculateTotalCartItems } from "../utils.js"
 import {useState, useEffect} from 'react';
 
 export function OrderComponent() {
     document.title="OnlineShop - Commande";
+    const [cartItemsLength, setCartItems] = useState(0);
     
     const [order, setOrder] = useState({
         "id" : 0,
@@ -17,25 +19,26 @@ export function OrderComponent() {
     });
 
     const handleSubmit = (evt) => {
-      console.log(`hello`);
-      return fetch("/api/orders", {
+      return fetch("http://localhost:4000/api/orders", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify(order)
+        body: JSON.stringify(order),
+        credentials: 'include'
       });
     }
         
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const item = await fetch("http://localhost:4000/api/shopping-cart", {withCredentials: true });
+                const item = await fetch("http://localhost:4000/api/shopping-cart", {credentials: 'include'});
                 if(item.ok) {
                     const items = await item.json();
+                    setCartItems(calculateTotalCartItems(items));
                     setOrder({"products" : items.map(item => {
                         return {
-                          id: item.product.id,
+                          id: item.productId,
                           quantity: item.quantity
                         }
                       })});
@@ -51,7 +54,7 @@ export function OrderComponent() {
 
     return (
         <div>
-            <Header/>
+            <Header cartCount={cartItemsLength}/>
             <main>
                 <article>
                   <h1>Commande</h1>
@@ -93,13 +96,15 @@ export function OrderComponent() {
                         <div className="col">
                           <div className="form-group">
                             <label htmlFor="credit-card">Numéro de carte de crédit</label>
-                            <input className="form-control" type="text" id="credit-card" name="credit-card" placeholder="•••• •••• •••• ••••" onChange={e => setOrder({[e.target.name] : e.target.value})} required/>
+                            <input className="form-control" type="text" id="credit-card" name="credit-card" placeholder="•••• •••• •••• ••••" onChange={e => setOrder({[e.target.name] : e.target.value})} required
+                                   pattern="(^4[0-9]{12}(?:[0-9]{3})?$)|(^(?:5[1-5][0-9]{2}|222[1-9]|22[3-9][0-9]|2[3-6][0-9]{2}|27[01][0-9]|2720)[0-9]{12}$)|(3[47][0-9]{13})|(^3(?:0[0-5]|[68][0-9])[0-9]{11}$)|(^6(?:011|5[0-9]{2})[0-9]{12}$)|(^(?:2131|1800|35\d{3})\d{11}$)"/>
                           </div>
                         </div>
                         <div className="col">
                           <div className="form-group">
                             <label htmlFor="credit-card-expiry">Expiration (mm/aa)</label>
-                            <input className="form-control" type="text" id="credit-card-expiry" name="credit-card-expiry" placeholder="mm/aa" onChange={e => setOrder({[e.target.name] : e.target.value})} required/>
+                            <input className="form-control" type="text" id="credit-card-expiry" name="credit-card-expiry" placeholder="mm/aa" onChange={e => setOrder({[e.target.name] : e.target.value})} required
+                                   pattern="^(0[1-9]|1[0-2])\/?([0-9]{2})"/>
                           </div>
                         </div>
                       </div>

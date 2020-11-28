@@ -4,7 +4,7 @@ import {Header} from "../_Common/Header.js"
 import {Footer} from "../_Common/Footer.js"
 import {useParams} from "react-router-dom";
 import {imageMap} from "../ProductsComponent/ProductImageLoader";
-import { formatPrice } from "../utils.js"
+import { calculateTotalCartItems, formatPrice } from "../utils.js"
 import { useEffect, useState } from 'react';
 
 export function ProductComponent() {
@@ -14,11 +14,30 @@ export function ProductComponent() {
     const [product, setProduct] = useState();
     const [loading, setLoading] = useState(true);
     const [quantity, setQuantity] = useState(1);
+    const [hidden, setShowDialog] = useState("dialog");
+    const [cartItemsLength, setCartItems] = useState(0);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const item = await fetch("http://localhost:4000/api/shopping-cart", {credentials: 'include' });
+                if(item.ok) {
+                    const orderItems = await item.json();
+                    setCartItems(calculateTotalCartItems(orderItems));
+                } else {
+                    throw item.json();
+                }
+            } catch(e) {
+                console.error(e);
+            }
+        }
+        fetchData();
+    }, []);
     
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const prod = await fetch(`http://localhost:4000/api/products/${id}`);
+                const prod = await fetch(`http://localhost:4000/api/products/${id}`, {credentials: 'include'});
                 if(prod.ok) {
                     setProduct(await prod.json());
                 } else {
@@ -44,9 +63,23 @@ export function ProductComponent() {
             body: JSON.stringify(addProduct)
         });
         if(prod.ok) {
-            console.log("nope1");
+            setCartItems(cartItemsLength + quantity);
         } else {
-            console.log("nope2");
+            const productGet = await fetch(`http://localhost:4000/api/shopping-cart/${id}`, {credentials: 'include'})
+            if (productGet.ok) {
+                const existingProduct = await productGet.json();
+                const update = await fetch(`http://localhost:4000/api/shopping-cart/${id}`, {
+                    method: "PUT",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    credentials: 'include',
+                    body: JSON.stringify({quantity: parseInt(quantity) + parseInt(existingProduct.quantity)})
+                });
+                if (update.ok) {
+                    setCartItems(cartItemsLength + parseInt(quantity));
+                } 
+            }
         }
     };
 
@@ -90,7 +123,7 @@ export function ProductComponent() {
                         <p>Prix: <strong id="product-price">{formatPrice(product.price)}</strong></p>
                     </div>
                 </div>
-                <div className="dialog" id="dialog">
+                <div className={hidden.toString()} id="dialog">
                     Le produit a été ajouté au panier.
                 </div>
             </article>
@@ -105,7 +138,7 @@ export function ProductComponent() {
     }
     return (
         <div>
-            <Header currentActive="product"/>
+            <Header currentActive="product" cartCount={cartItemsLength}/>
             <main>
                 {content}
             </main>

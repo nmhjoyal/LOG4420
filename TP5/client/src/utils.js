@@ -30,3 +30,12 @@ export function pad(number, width, symbol) {
         numberStr :
         new Array(width - numberStr.length + 1).join(symbolStr) + numberStr;
 }
+
+
+export function calculateTotalCartItems(list) {
+    let sum = 0;
+    list.forEach((item) => {
+        sum += item.quantity;
+    });
+    return sum;
+}

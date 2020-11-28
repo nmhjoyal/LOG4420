@@ -2,8 +2,9 @@ import { Link } from "react-router-dom";
 import logo from "../img/logo.svg";
 export function Header(prop) {
   
-    const cartCount = 3;
+    const cartCount = prop.cartCount;
     const currentActive = prop.currentActive;
+    
     return (
         <header>
             <div className="header-container">
@@ -23,7 +24,7 @@ export function Header(prop) {
                                 <i className="fa fa-circle fa-stack-2x fa-inverse"></i>
                                 <i className="fa fa-shopping-cart fa-stack-1x"></i>
                             </span>
-                            <span className="count">{cartCount}</span>
+                            <span className={cartCount > 0 ? "count visible": "count"}>{cartCount}</span>
                         </Link>
                     </li>
                 </ul>

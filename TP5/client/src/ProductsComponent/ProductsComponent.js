@@ -5,12 +5,31 @@ import {Footer} from "../_Common/Footer.js"
 import { SingleProductPart } from './SingleProductPart';
 import { useEffect, useState } from 'react';
 import { applyCategory, applySortingCriteria } from "./ProductsUtil.js"
+import { calculateTotalCartItems } from '../utils';
 
 export function ProductsComponent() {
     document.title="OnlineShop - Produits";
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
-    
+    const [cartItemsLength, setCartItems] = useState(0);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const item = await fetch("http://localhost:4000/api/shopping-cart", {credentials: 'include' });
+                if(item.ok) {
+                    const orderItems = await item.json();
+                    setCartItems(calculateTotalCartItems(orderItems));
+                } else {
+                    throw item.json();
+                }
+            } catch(e) {
+                console.error(e);
+            }
+        }
+        fetchData();
+    }, []);
+
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -56,7 +75,7 @@ export function ProductsComponent() {
 
     return (
         <div>
-            <Header currentActive="product"/>
+            <Header currentActive="product" cartCount={cartItemsLength}/>
             <main>
             <section className="sidebar" aria-label="Filtres">
             <section>

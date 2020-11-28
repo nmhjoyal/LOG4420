@@ -2,7 +2,7 @@ import '../css/App.css';
 import {Header} from "../_Common/Header.js"
 import {Footer} from "../_Common/Footer.js"
 import {Link} from "react-router-dom"
-import { formatPrice } from "../utils.js"
+import { formatPrice, calculateTotalCartItems } from "../utils.js"
 import { useEffect, useState } from 'react';
 
 export function ShoppingCartComponent() {
@@ -10,6 +10,7 @@ export function ShoppingCartComponent() {
     const [ordersItems, setItems] = useState([]);
     const [total, setTotal] = useState(0);
     const [isEmpty, setIsEmpty] = useState(false);
+    const [cartItemsLength, setCartItems] = useState(0);
     
     useEffect(() => {
         const fetchData = async () => {
@@ -17,9 +18,9 @@ export function ShoppingCartComponent() {
                 const item = await fetch("http://localhost:4000/api/shopping-cart", {credentials: 'include' });
                 const list = await fetch("http://localhost:4000/api/products", {credentials: 'include' });
                 if(item.ok && list.ok) {
-                    let calcTotal = 0.0;
                     const orderItems = await item.json();
                     const productsList = await list.json();
+                    let calcTotal = 0.0;
                     let items = [];
                     orderItems.forEach((orderItem) => {
                         const cartItem = {
@@ -34,6 +35,7 @@ export function ShoppingCartComponent() {
                     }
                     setItems(items);
                     setTotal(calcTotal);
+                    setCartItems(calculateTotalCartItems(orderItems));
                 } else {
                     throw item.json();
                 }
@@ -57,6 +59,7 @@ export function ShoppingCartComponent() {
             const newList = [...ordersItems];
             newList.find((selectedItem) => parseInt(selectedItem.product.id) === parseInt(item.product.id)).quantity = item.quantity;
             setItems(newList);
+            setCartItems(calculateTotalCartItems(newList));
             updateTotal();
         } else {
             console.log("nope2");
@@ -79,6 +82,7 @@ export function ShoppingCartComponent() {
                     setIsEmpty(true);
                 }
                 updateTotal();
+                setCartItems(calculateTotalCartItems(newItems));
             } else {
                 console.log("nope2");
             }
@@ -103,6 +107,7 @@ export function ShoppingCartComponent() {
                 credentials: 'include'
             });
             if (prod.ok) {
+                setCartItems(0);
                 setIsEmpty(true);
             }
         }
@@ -161,7 +166,7 @@ export function ShoppingCartComponent() {
     }
     return (
         <div>
-            <Header/>
+            <Header cartCount={cartItemsLength}/>
             <main>
                 {content}
             </main>
