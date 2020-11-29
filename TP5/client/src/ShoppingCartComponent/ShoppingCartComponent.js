@@ -9,7 +9,7 @@ export function ShoppingCartComponent() {
     document.title="OnlineShop - Panier";
     const [ordersItems, setItems] = useState([]);
     const [total, setTotal] = useState(0);
-    const [isEmpty, setIsEmpty] = useState(false);
+    const [isEmpty, setIsEmpty] = useState(true);
     const [cartItemsLength, setCartItems] = useState(0);
     
     useEffect(() => {
@@ -30,8 +30,8 @@ export function ShoppingCartComponent() {
                         items.push(cartItem);
                         calcTotal += cartItem.quantity * cartItem.product.price;
                     });
-                    if (items.length === 0) {
-                        setIsEmpty(true);
+                    if (items.length !== 0) {
+                        setIsEmpty(false);
                     }
                     setItems(items);
                     setTotal(calcTotal);
@@ -61,8 +61,6 @@ export function ShoppingCartComponent() {
             setItems(newList);
             setCartItems(calculateTotalCartItems(newList));
             updateTotal();
-        } else {
-            console.log("nope2");
         }
     };
 
@@ -83,8 +81,6 @@ export function ShoppingCartComponent() {
                 }
                 updateTotal();
                 setCartItems(calculateTotalCartItems(newItems));
-            } else {
-                console.log("nope2");
             }
         }
     };

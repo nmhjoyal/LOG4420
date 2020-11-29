@@ -3,7 +3,7 @@ import '../css/App.css';
 import {Header} from "../_Common/Header.js"
 import {Footer} from "../_Common/Footer.js"
 import { calculateTotalCartItems } from "../utils.js"
-import {useState, useEffect} from 'react';
+import {useState, useEffect, useCallback} from 'react';
 
 export function OrderComponent() {
     document.title="OnlineShop - Commande";
@@ -28,29 +28,49 @@ export function OrderComponent() {
         credentials: 'include'
       });
     }
+
+    const changeProperty = useCallback((name, value) => {
+      const newOrder = order;
+      newOrder[name] = value;  
+      setOrder(newOrder);
+    }, [order])
         
     useEffect(() => {
-        const fetchData = async () => {
+        const fetchDataShoppingCart = async () => {
             try {
-                const item = await fetch("http://localhost:4000/api/shopping-cart", {credentials: 'include'});
-                if(item.ok) {
-                    const items = await item.json();
+                const ans = await fetch("http://localhost:4000/api/shopping-cart", {credentials: 'include'});
+                if(ans.ok) {
+                    const items = await ans.json();
                     setCartItems(calculateTotalCartItems(items));
-                    setOrder({"products" : items.map(item => {
+                    changeProperty("products", items.map(item => {
                         return {
                           id: item.productId,
                           quantity: item.quantity
                         }
-                      })});
+                      }));
                 } else {
-                    throw item.json();
+                    throw ans.json();
                 }
             } catch(e) {
                 console.error(e);
             }
         }
-        fetchData();
-    }, []);
+        const fetchDataOrder = async () => {
+          try {
+              const ans = await fetch("http://localhost:4000/api/orders");
+              if(ans.ok) {
+                  const orders = await ans.json();
+                  changeProperty("id", orders.length);
+              } else {
+                  throw ans.json();
+              }
+          } catch(e) {
+              console.error(e);
+          }
+        }
+        fetchDataShoppingCart();
+        fetchDataOrder();
+    }, [changeProperty]);
 
     return (
         <div>
@@ -65,13 +85,13 @@ export function OrderComponent() {
                         <div className="col">
                           <div className="form-group">
                             <label htmlFor="firstName">Prénom</label>
-                            <input className="form-control" type="text" id="firstName" name="firstName" placeholder="Prénom" minLength="2" onChange={e => setOrder({[e.target.name] : e.target.value})} required/>
+                            <input className="form-control" type="text" id="firstName" name="firstName" placeholder="Prénom" minLength="2" onChange={e => changeProperty(e.target.name, e.target.value)} required/>
                           </div>
                         </div>
                         <div className="col">
                           <div className="form-group">
                             <label htmlFor="lastName">Nom</label>
-                            <input className="form-control" type="text" id="lastName" name="lastName" placeholder="Nom" minLength="2" onChange={e => setOrder({[e.target.name] : e.target.value})} required/>
+                            <input className="form-control" type="text" id="lastName" name="lastName" placeholder="Nom" minLength="2" onChange={e => changeProperty(e.target.name, e.target.value)} required/>
                           </div>
                         </div>
                       </div>
@@ -79,13 +99,13 @@ export function OrderComponent() {
                         <div className="col">
                           <div className="form-group">
                             <label htmlFor="email">Adresse courriel</label>
-                            <input className="form-control" type="email" id="email" name="email" placeholder="Adresse courriel" onChange={e => setOrder({[e.target.name] : e.target.value})} required/>
+                            <input className="form-control" type="email" id="email" name="email" placeholder="Adresse courriel" onChange={e => changeProperty(e.target.name, e.target.value)} required/>
                           </div>
                         </div>
                         <div className="col">
                           <div className="form-group">
                             <label htmlFor="phone">Téléphone</label>
-                            <input className="form-control" type="tel" id="phone" name="phone" placeholder="###-###-####" onChange={e => setOrder({[e.target.name] : e.target.value})} required/>
+                            <input className="form-control" type="tel" id="phone" name="phone" placeholder="###-###-####" onChange={e => changeProperty(e.target.name, e.target.value)} required/>
                           </div>
                         </div>
                       </div>
@@ -96,14 +116,14 @@ export function OrderComponent() {
                         <div className="col">
                           <div className="form-group">
                             <label htmlFor="credit-card">Numéro de carte de crédit</label>
-                            <input className="form-control" type="text" id="credit-card" name="credit-card" placeholder="•••• •••• •••• ••••" onChange={e => setOrder({[e.target.name] : e.target.value})} required
+                            <input className="form-control" type="text" id="credit-card" name="credit-card" placeholder="•••• •••• •••• ••••" required
                                    pattern="(^4[0-9]{12}(?:[0-9]{3})?$)|(^(?:5[1-5][0-9]{2}|222[1-9]|22[3-9][0-9]|2[3-6][0-9]{2}|27[01][0-9]|2720)[0-9]{12}$)|(3[47][0-9]{13})|(^3(?:0[0-5]|[68][0-9])[0-9]{11}$)|(^6(?:011|5[0-9]{2})[0-9]{12}$)|(^(?:2131|1800|35\d{3})\d{11}$)"/>
                           </div>
                         </div>
                         <div className="col">
                           <div className="form-group">
                             <label htmlFor="credit-card-expiry">Expiration (mm/aa)</label>
-                            <input className="form-control" type="text" id="credit-card-expiry" name="credit-card-expiry" placeholder="mm/aa" onChange={e => setOrder({[e.target.name] : e.target.value})} required
+                            <input className="form-control" type="text" id="credit-card-expiry" name="credit-card-expiry" placeholder="mm/aa" required
                                    pattern="^(0[1-9]|1[0-2])\/?([0-9]{2})"/>
                           </div>
                         </div>

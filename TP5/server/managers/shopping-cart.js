@@ -29,7 +29,6 @@ self.initialize = session => {
  * @return {Array}  An array that contains the items.
  */
 self.getItems = () => {
-  console.log(items);
   return items;
 };
 
@@ -69,16 +68,12 @@ self.addItem = item => {
     const itemFound = items.find(element => element.productId === item.productId);
     if (result.data !== null && !itemFound) {
       items.push(item);
-      console.log("allo");
-      console.log(item);
-      console.log(items);
       deferred.resolve(false);
     } else {
       deferred.resolve(true);
     }
   });
 
-  console.log(items);
   return deferred.promise;
 };
 

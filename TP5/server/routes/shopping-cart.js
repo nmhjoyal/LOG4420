@@ -4,7 +4,6 @@ const shoppingCartManager = require("../managers/shopping-cart");
 
 // Initialize the shopping cart session.
 router.use((req, res, next) => {
-  console.log(req.session);
   shoppingCartManager.initialize(req.session);
   next();
 });
