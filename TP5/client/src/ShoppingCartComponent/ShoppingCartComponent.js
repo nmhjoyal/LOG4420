@@ -74,13 +74,13 @@ export function ShoppingCartComponent() {
                 credentials: 'include'
             });
             if(prod.ok) {
-                const newItems = ordersItems.filter((orderitem) => orderitem !== item);
-                setItems(newItems);
-                if (newItems.length === 0) {
+                ordersItems.splice(ordersItems.indexOf(item), 1);
+                setItems(ordersItems);
+                if (ordersItems.length === 0) {
                     setIsEmpty(true);
                 }
+                setCartItems(calculateTotalCartItems(ordersItems));
                 updateTotal();
-                setCartItems(calculateTotalCartItems(newItems));
             }
         }
     };
