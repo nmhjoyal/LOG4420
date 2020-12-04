@@ -64,7 +64,7 @@ export function ProductComponent() {
         if(prod.ok) {
             setShowDialog(true);
             setTimeout(() => { setShowDialog(false)}, 5000);
-            setCartItems(cartItemsLength + quantity);
+            setCartItems(cartItemsLength + parseInt(quantity));
         } else {
             const productGet = await fetch(`http://localhost:4000/api/shopping-cart/${id}`, {credentials: 'include'})
             if (productGet.ok) {
